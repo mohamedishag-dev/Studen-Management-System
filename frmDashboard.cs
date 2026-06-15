@@ -19,15 +19,16 @@ namespace Student_Management_System
 
 
         private Color DefaultColor = Color.FromArgb(39, 41, 59);
-
+        private Panel pnlActivate;
         private void ResetBackColor(Panel Pnl)
         {
             pnlDashboard.BackColor = DefaultColor;
             pnlStudents.BackColor = DefaultColor;
             pnlAddStudent.BackColor = DefaultColor;
             pnlUser.BackColor = DefaultColor;
-
+            
             Pnl.BackColor = Color.FromArgb(37, 99, 235);
+            pnlActivate = Pnl;
         }
 
         private void Pnl_MouseEnter(Panel Pnl)
@@ -37,7 +38,10 @@ namespace Student_Management_System
 
         private void Pnl_MouseLeave(Panel Pnl)
         {
-            Pnl.BackColor = DefaultColor;
+            if (Pnl == pnlActivate)
+                return;
+            else
+                Pnl.BackColor = DefaultColor;
         }
 
         private void btnDashboard_MouseEnter(object sender, EventArgs e)
@@ -147,6 +151,8 @@ namespace Student_Management_System
             ucDashboard Dashboard = new ucDashboard();
             Dashboard.Dock = DockStyle.Fill;
             panelContainer.Controls.Add(Dashboard);
+            pnlDashboard.BackColor = Color.FromArgb(37, 99, 235);
+            pnlActivate = pnlDashboard;
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
@@ -157,7 +163,8 @@ namespace Student_Management_System
             ucDashboard Dashboard = new ucDashboard();
             Dashboard.Dock = DockStyle.Fill;
             panelContainer.Controls.Add(Dashboard);
-
         }
+
+      
     }
 }

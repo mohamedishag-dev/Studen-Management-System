@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashboard));
             this.pnlSidebar = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pnlLogout = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
@@ -46,6 +48,7 @@
             this.btnDashboard = new System.Windows.Forms.Button();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.pnlSidebar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.pnlLogout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.pnlUser.SuspendLayout();
@@ -61,6 +64,7 @@
             // pnlSidebar
             // 
             this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(41)))), ((int)(((byte)(59)))));
+            this.pnlSidebar.Controls.Add(this.pictureBox5);
             this.pnlSidebar.Controls.Add(this.pnlLogout);
             this.pnlSidebar.Controls.Add(this.pnlUser);
             this.pnlSidebar.Controls.Add(this.pnlAddStudent);
@@ -74,14 +78,25 @@
             this.pnlSidebar.Size = new System.Drawing.Size(240, 561);
             this.pnlSidebar.TabIndex = 2;
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(67, 36);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(153, 90);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 0;
+            this.pictureBox5.TabStop = false;
+            // 
             // pnlLogout
             // 
             this.pnlLogout.Controls.Add(this.pictureBox4);
             this.pnlLogout.Controls.Add(this.btnLogout);
-            this.pnlLogout.Location = new System.Drawing.Point(3, 346);
+            this.pnlLogout.Location = new System.Drawing.Point(3, 375);
             this.pnlLogout.Name = "pnlLogout";
             this.pnlLogout.Size = new System.Drawing.Size(240, 54);
-            this.pnlLogout.TabIndex = 2;
+            this.pnlLogout.TabIndex = 4;
             // 
             // pictureBox4
             // 
@@ -115,10 +130,10 @@
             // 
             this.pnlUser.Controls.Add(this.pictureBox3);
             this.pnlUser.Controls.Add(this.btnUser);
-            this.pnlUser.Location = new System.Drawing.Point(0, 289);
+            this.pnlUser.Location = new System.Drawing.Point(0, 318);
             this.pnlUser.Name = "pnlUser";
             this.pnlUser.Size = new System.Drawing.Size(240, 54);
-            this.pnlUser.TabIndex = 2;
+            this.pnlUser.TabIndex = 3;
             // 
             // pictureBox3
             // 
@@ -152,7 +167,7 @@
             // 
             this.pnlAddStudent.Controls.Add(this.pictureBox2);
             this.pnlAddStudent.Controls.Add(this.btnAddStudent);
-            this.pnlAddStudent.Location = new System.Drawing.Point(3, 232);
+            this.pnlAddStudent.Location = new System.Drawing.Point(3, 261);
             this.pnlAddStudent.Name = "pnlAddStudent";
             this.pnlAddStudent.Size = new System.Drawing.Size(240, 54);
             this.pnlAddStudent.TabIndex = 2;
@@ -189,10 +204,10 @@
             // 
             this.pnlStudents.Controls.Add(this.pictureBox1);
             this.pnlStudents.Controls.Add(this.btnStudents);
-            this.pnlStudents.Location = new System.Drawing.Point(3, 175);
+            this.pnlStudents.Location = new System.Drawing.Point(3, 204);
             this.pnlStudents.Name = "pnlStudents";
             this.pnlStudents.Size = new System.Drawing.Size(240, 54);
-            this.pnlStudents.TabIndex = 2;
+            this.pnlStudents.TabIndex = 1;
             // 
             // pictureBox1
             // 
@@ -226,7 +241,7 @@
             // 
             this.pnlDashboard.Controls.Add(this.pctDashboard);
             this.pnlDashboard.Controls.Add(this.btnDashboard);
-            this.pnlDashboard.Location = new System.Drawing.Point(3, 118);
+            this.pnlDashboard.Location = new System.Drawing.Point(3, 147);
             this.pnlDashboard.Name = "pnlDashboard";
             this.pnlDashboard.Size = new System.Drawing.Size(240, 54);
             this.pnlDashboard.TabIndex = 0;
@@ -261,6 +276,7 @@
             // 
             // panelContainer
             // 
+            this.panelContainer.BackColor = System.Drawing.Color.Transparent;
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(240, 0);
             this.panelContainer.Name = "panelContainer";
@@ -279,6 +295,7 @@
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.frmDashboard_Load);
             this.pnlSidebar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.pnlLogout.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.pnlUser.ResumeLayout(false);
@@ -312,6 +329,7 @@
         private System.Windows.Forms.Panel pnlStudents;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnStudents;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
 

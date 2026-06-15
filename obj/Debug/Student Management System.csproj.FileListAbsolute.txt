@@ -12,3 +12,5 @@ E:\ProgarmmingAdvises\Student Management System\obj\Debug\Student_Management_Sys
 E:\ProgarmmingAdvises\Student Management System\obj\Debug\Student_Management_System.ucAddStudent.resources
 E:\ProgarmmingAdvises\Student Management System\obj\Debug\Student_Management_System.ucUsers.resources
 E:\ProgarmmingAdvises\Student Management System\obj\Debug\Student_Management_System.ucDashboard.resources
+E:\ProgarmmingAdvises\Student Management System\obj\Debug\Student_Management_System.frmLogin.resources
+E:\ProgarmmingAdvises\Student Management System\obj\Debug\Student_Management_System.frmMessage.resources
