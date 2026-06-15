@@ -1,0 +1,14 @@
+E:\ProgarmmingAdvises\Student Management System\bin\Debug\Student Management System.exe.config
+E:\ProgarmmingAdvises\Student Management System\bin\Debug\Student Management System.exe
+E:\ProgarmmingAdvises\Student Management System\bin\Debug\Student Management System.pdb
+E:\ProgarmmingAdvises\Student Management System\obj\Debug\Student Management System.csproj.AssemblyReference.cache
+E:\ProgarmmingAdvises\Student Management System\obj\Debug\Student_Management_System.Properties.Resources.resources
+E:\ProgarmmingAdvises\Student Management System\obj\Debug\Student Management System.csproj.GenerateResource.cache
+E:\ProgarmmingAdvises\Student Management System\obj\Debug\Student Management System.csproj.CoreCompileInputs.cache
+E:\ProgarmmingAdvises\Student Management System\obj\Debug\Student Management System.exe
+E:\ProgarmmingAdvises\Student Management System\obj\Debug\Student Management System.pdb
+E:\ProgarmmingAdvises\Student Management System\obj\Debug\Student_Management_System.frmDashboard.resources
+E:\ProgarmmingAdvises\Student Management System\obj\Debug\Student_Management_System.ucStudents.resources
+E:\ProgarmmingAdvises\Student Management System\obj\Debug\Student_Management_System.ucAddStudent.resources
+E:\ProgarmmingAdvises\Student Management System\obj\Debug\Student_Management_System.ucUsers.resources
+E:\ProgarmmingAdvises\Student Management System\obj\Debug\Student_Management_System.ucDashboard.resources
