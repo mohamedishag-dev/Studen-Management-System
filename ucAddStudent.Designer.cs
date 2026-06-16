@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Button btnCancel;
-            System.Windows.Forms.ComboBox comboBox1;
             System.Windows.Forms.Button btnSave;
             System.Windows.Forms.Panel pnlFirstName;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucAddStudent));
@@ -44,22 +43,22 @@
             System.Windows.Forms.Label label8;
             System.Windows.Forms.Label label9;
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtAge = new System.Windows.Forms.TextBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.cbGender = new System.Windows.Forms.ComboBox();
             btnCancel = new System.Windows.Forms.Button();
-            comboBox1 = new System.Windows.Forms.ComboBox();
             btnSave = new System.Windows.Forms.Button();
             pnlFirstName = new System.Windows.Forms.Panel();
             pnlLastName = new System.Windows.Forms.Panel();
@@ -79,12 +78,12 @@
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -97,18 +96,6 @@
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = false;
             // 
-            // comboBox1
-            // 
-            comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            comboBox1.Location = new System.Drawing.Point(370, 234);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new System.Drawing.Size(280, 21);
-            comboBox1.TabIndex = 4;
-            // 
             // btnSave
             // 
             btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
@@ -119,13 +106,14 @@
             btnSave.Text = "Save";
             btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pnlFirstName
             // 
             pnlFirstName.BackColor = System.Drawing.Color.White;
             pnlFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             pnlFirstName.Controls.Add(this.pictureBox3);
-            pnlFirstName.Controls.Add(this.textBox1);
+            pnlFirstName.Controls.Add(this.txtFirstName);
             pnlFirstName.Location = new System.Drawing.Point(30, 155);
             pnlFirstName.Name = "pnlFirstName";
             pnlFirstName.Size = new System.Drawing.Size(280, 46);
@@ -142,25 +130,25 @@
             this.pictureBox3.TabIndex = 16;
             this.pictureBox3.TabStop = false;
             // 
-            // textBox1
+            // txtFirstName
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox1.Location = new System.Drawing.Point(26, 13);
-            this.textBox1.MaxLength = 15;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(231, 17);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Enter First Name";
+            this.txtFirstName.BackColor = System.Drawing.Color.White;
+            this.txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFirstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtFirstName.Location = new System.Drawing.Point(26, 13);
+            this.txtFirstName.MaxLength = 15;
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(231, 17);
+            this.txtFirstName.TabIndex = 0;
+            this.txtFirstName.Text = "Enter First Name";
             // 
             // pnlLastName
             // 
             pnlLastName.BackColor = System.Drawing.Color.White;
             pnlLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             pnlLastName.Controls.Add(this.pictureBox1);
-            pnlLastName.Controls.Add(this.textBox6);
+            pnlLastName.Controls.Add(this.txtLastName);
             pnlLastName.Location = new System.Drawing.Point(30, 234);
             pnlLastName.Name = "pnlLastName";
             pnlLastName.Size = new System.Drawing.Size(280, 46);
@@ -177,25 +165,25 @@
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox6
+            // txtLastName
             // 
-            this.textBox6.BackColor = System.Drawing.Color.White;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox6.Location = new System.Drawing.Point(26, 13);
-            this.textBox6.MaxLength = 15;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(231, 17);
-            this.textBox6.TabIndex = 0;
-            this.textBox6.Text = "Enter First Name";
+            this.txtLastName.BackColor = System.Drawing.Color.White;
+            this.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtLastName.Location = new System.Drawing.Point(26, 13);
+            this.txtLastName.MaxLength = 15;
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(231, 17);
+            this.txtLastName.TabIndex = 0;
+            this.txtLastName.Text = "Enter First Name";
             // 
             // panel4
             // 
             panel4.BackColor = System.Drawing.Color.White;
             panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             panel4.Controls.Add(this.pictureBox4);
-            panel4.Controls.Add(this.textBox2);
+            panel4.Controls.Add(this.txtAge);
             panel4.Location = new System.Drawing.Point(32, 318);
             panel4.Name = "panel4";
             panel4.Size = new System.Drawing.Size(280, 46);
@@ -212,49 +200,60 @@
             this.pictureBox4.TabIndex = 16;
             this.pictureBox4.TabStop = false;
             // 
-            // textBox2
+            // txtAge
             // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox2.Location = new System.Drawing.Point(26, 13);
-            this.textBox2.MaxLength = 15;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(231, 17);
-            this.textBox2.TabIndex = 0;
-            this.textBox2.Text = "Enter First Name";
+            this.txtAge.BackColor = System.Drawing.Color.White;
+            this.txtAge.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtAge.Location = new System.Drawing.Point(26, 13);
+            this.txtAge.MaxLength = 15;
+            this.txtAge.Name = "txtAge";
+            this.txtAge.Size = new System.Drawing.Size(231, 17);
+            this.txtAge.TabIndex = 0;
+            this.txtAge.Text = "Enter First Name";
             // 
             // panel5
             // 
             panel5.BackColor = System.Drawing.Color.White;
             panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             panel5.Controls.Add(this.pictureBox5);
-            panel5.Controls.Add(this.textBox3);
+            panel5.Controls.Add(this.txtAddress);
             panel5.Location = new System.Drawing.Point(370, 318);
             panel5.Name = "panel5";
             panel5.Size = new System.Drawing.Size(280, 46);
             panel5.TabIndex = 5;
             // 
-            // textBox3
+            // pictureBox5
             // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox3.Location = new System.Drawing.Point(26, 13);
-            this.textBox3.MaxLength = 15;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(231, 17);
-            this.textBox3.TabIndex = 0;
-            this.textBox3.Text = "Enter First Name";
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(0, 13);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 16;
+            this.pictureBox5.TabStop = false;
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.BackColor = System.Drawing.Color.White;
+            this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtAddress.Location = new System.Drawing.Point(26, 13);
+            this.txtAddress.MaxLength = 15;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(231, 17);
+            this.txtAddress.TabIndex = 0;
+            this.txtAddress.Text = "Enter First Name";
             // 
             // panel6
             // 
             panel6.BackColor = System.Drawing.Color.White;
             panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             panel6.Controls.Add(this.pictureBox6);
-            panel6.Controls.Add(this.textBox5);
+            panel6.Controls.Add(this.txtPhone);
             panel6.Location = new System.Drawing.Point(370, 155);
             panel6.Name = "panel6";
             panel6.Size = new System.Drawing.Size(280, 46);
@@ -271,18 +270,18 @@
             this.pictureBox6.TabIndex = 16;
             this.pictureBox6.TabStop = false;
             // 
-            // textBox5
+            // txtPhone
             // 
-            this.textBox5.BackColor = System.Drawing.Color.White;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox5.Location = new System.Drawing.Point(26, 13);
-            this.textBox5.MaxLength = 15;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(231, 17);
-            this.textBox5.TabIndex = 0;
-            this.textBox5.Text = "Enter First Name";
+            this.txtPhone.BackColor = System.Drawing.Color.White;
+            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtPhone.Location = new System.Drawing.Point(26, 13);
+            this.txtPhone.MaxLength = 15;
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(231, 17);
+            this.txtPhone.TabIndex = 0;
+            this.txtPhone.Text = "Enter First Name";
             // 
             // label3
             // 
@@ -341,6 +340,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.cbGender);
             this.panel1.Controls.Add(label9);
             this.panel1.Controls.Add(label8);
             this.panel1.Controls.Add(label7);
@@ -354,7 +354,6 @@
             this.panel1.Controls.Add(pnlLastName);
             this.panel1.Controls.Add(pnlFirstName);
             this.panel1.Controls.Add(btnCancel);
-            this.panel1.Controls.Add(comboBox1);
             this.panel1.Controls.Add(btnSave);
             this.panel1.Location = new System.Drawing.Point(0, 3);
             this.panel1.Name = "panel1";
@@ -404,16 +403,16 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Fill in the student information";
             // 
-            // pictureBox5
+            // cbGender
             // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(0, 13);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 16;
-            this.pictureBox5.TabStop = false;
+            this.cbGender.FormattingEnabled = true;
+            this.cbGender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.cbGender.Location = new System.Drawing.Point(371, 234);
+            this.cbGender.Name = "cbGender";
+            this.cbGender.Size = new System.Drawing.Size(280, 21);
+            this.cbGender.TabIndex = 27;
             // 
             // ucAddStudent
             // 
@@ -434,6 +433,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -441,26 +441,26 @@
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtAge;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.ComboBox cbGender;
     }
 }

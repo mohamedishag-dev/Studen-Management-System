@@ -23,9 +23,9 @@ namespace Student_Management_System
 
             for (int i = 1; i <= 20; i++)
             {
-                string[] DataLine = { i.ToString(), "Mohamed Ishag", "21", "Male", "09267226354", "B303" };
+                string[] DataLine = { i.ToString(), "Mohamed Ishag", "21",  "09267226354", "Male", "B303" };
 
-                dgv1.Rows.Add((DataLine));
+                dgvStudents.Rows.Add((DataLine));
 
             }
 
