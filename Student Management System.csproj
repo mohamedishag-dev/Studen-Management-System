@@ -46,6 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsStudent.cs" />
+    <Compile Include="frmEditStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditStudent.Designer.cs">
+      <DependentUpon>frmEditStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +90,12 @@
     <Compile Include="ucDashboard.Designer.cs">
       <DependentUpon>ucDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucEditStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucEditStudent.Designer.cs">
+      <DependentUpon>ucEditStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucStudents.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -95,6 +108,9 @@
     <Compile Include="ucUsers.Designer.cs">
       <DependentUpon>ucUsers.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmEditStudent.resx">
+      <DependentUpon>frmEditStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucDashboard.resx">
       <DependentUpon>ucDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucEditStudent.resx">
+      <DependentUpon>ucEditStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucStudents.resx">
       <DependentUpon>ucStudents.cs</DependentUpon>
@@ -208,6 +227,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ic_fluent_person_24_filled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\people_community_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hat_graduation_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_24_filled %282.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_edit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

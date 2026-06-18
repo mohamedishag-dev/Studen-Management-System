@@ -133,6 +133,7 @@ namespace Student_Management_System
             ucAddStudent AddStudent = new ucAddStudent();
             AddStudent.Dock = DockStyle.Fill;
             panelContainer.Controls.Add(AddStudent);
+
         }
 
         private void btnUser_Click(object sender, EventArgs e)
@@ -145,14 +146,15 @@ namespace Student_Management_System
             panelContainer.Controls.Add(Users);
 
         }
-
+        
         private void frmDashboard_Load(object sender, EventArgs e)
         {
+            ResetBackColor(pnlDashboard);
+
+            panelContainer.Controls.Clear();
             ucDashboard Dashboard = new ucDashboard();
             Dashboard.Dock = DockStyle.Fill;
             panelContainer.Controls.Add(Dashboard);
-            pnlDashboard.BackColor = Color.FromArgb(37, 99, 235);
-            pnlActivate = pnlDashboard;
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
@@ -166,5 +168,6 @@ namespace Student_Management_System
         }
 
       
+
     }
 }

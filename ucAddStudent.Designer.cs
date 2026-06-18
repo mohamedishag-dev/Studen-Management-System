@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button btnCancel;
-            System.Windows.Forms.Button btnSave;
             System.Windows.Forms.Panel pnlFirstName;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucAddStudent));
             System.Windows.Forms.Panel pnlLastName;
@@ -53,13 +51,13 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.cbGender = new System.Windows.Forms.ComboBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbGender = new System.Windows.Forms.ComboBox();
-            btnCancel = new System.Windows.Forms.Button();
-            btnSave = new System.Windows.Forms.Button();
             pnlFirstName = new System.Windows.Forms.Panel();
             pnlLastName = new System.Windows.Forms.Panel();
             panel4 = new System.Windows.Forms.Panel();
@@ -86,35 +84,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnCancel
-            // 
-            btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(235)))));
-            btnCancel.Location = new System.Drawing.Point(370, 400);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new System.Drawing.Size(120, 40);
-            btnCancel.TabIndex = 7;
-            btnCancel.Text = "Cancel";
-            btnCancel.UseVisualStyleBackColor = false;
-            // 
-            // btnSave
-            // 
-            btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
-            btnSave.Location = new System.Drawing.Point(190, 400);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new System.Drawing.Size(120, 40);
-            btnSave.TabIndex = 6;
-            btnSave.Text = "Save";
-            btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            btnSave.UseVisualStyleBackColor = false;
-            btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // pnlFirstName
             // 
             pnlFirstName.BackColor = System.Drawing.Color.White;
             pnlFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             pnlFirstName.Controls.Add(this.pictureBox3);
             pnlFirstName.Controls.Add(this.txtFirstName);
-            pnlFirstName.Location = new System.Drawing.Point(30, 155);
+            pnlFirstName.Location = new System.Drawing.Point(84, 152);
             pnlFirstName.Name = "pnlFirstName";
             pnlFirstName.Size = new System.Drawing.Size(280, 46);
             pnlFirstName.TabIndex = 0;
@@ -141,7 +117,6 @@
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(231, 17);
             this.txtFirstName.TabIndex = 0;
-            this.txtFirstName.Text = "Enter First Name";
             // 
             // pnlLastName
             // 
@@ -149,7 +124,7 @@
             pnlLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             pnlLastName.Controls.Add(this.pictureBox1);
             pnlLastName.Controls.Add(this.txtLastName);
-            pnlLastName.Location = new System.Drawing.Point(30, 234);
+            pnlLastName.Location = new System.Drawing.Point(84, 231);
             pnlLastName.Name = "pnlLastName";
             pnlLastName.Size = new System.Drawing.Size(280, 46);
             pnlLastName.TabIndex = 1;
@@ -176,7 +151,6 @@
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(231, 17);
             this.txtLastName.TabIndex = 0;
-            this.txtLastName.Text = "Enter First Name";
             // 
             // panel4
             // 
@@ -184,7 +158,7 @@
             panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             panel4.Controls.Add(this.pictureBox4);
             panel4.Controls.Add(this.txtAge);
-            panel4.Location = new System.Drawing.Point(32, 318);
+            panel4.Location = new System.Drawing.Point(86, 315);
             panel4.Name = "panel4";
             panel4.Size = new System.Drawing.Size(280, 46);
             panel4.TabIndex = 2;
@@ -211,7 +185,6 @@
             this.txtAge.Name = "txtAge";
             this.txtAge.Size = new System.Drawing.Size(231, 17);
             this.txtAge.TabIndex = 0;
-            this.txtAge.Text = "Enter First Name";
             // 
             // panel5
             // 
@@ -219,7 +192,7 @@
             panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             panel5.Controls.Add(this.pictureBox5);
             panel5.Controls.Add(this.txtAddress);
-            panel5.Location = new System.Drawing.Point(370, 318);
+            panel5.Location = new System.Drawing.Point(424, 315);
             panel5.Name = "panel5";
             panel5.Size = new System.Drawing.Size(280, 46);
             panel5.TabIndex = 5;
@@ -246,7 +219,6 @@
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(231, 17);
             this.txtAddress.TabIndex = 0;
-            this.txtAddress.Text = "Enter First Name";
             // 
             // panel6
             // 
@@ -254,7 +226,7 @@
             panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             panel6.Controls.Add(this.pictureBox6);
             panel6.Controls.Add(this.txtPhone);
-            panel6.Location = new System.Drawing.Point(370, 155);
+            panel6.Location = new System.Drawing.Point(424, 152);
             panel6.Name = "panel6";
             panel6.Size = new System.Drawing.Size(280, 46);
             panel6.TabIndex = 3;
@@ -281,12 +253,11 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(231, 17);
             this.txtPhone.TabIndex = 0;
-            this.txtPhone.Text = "Enter First Name";
             // 
             // label3
             // 
             label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label3.Location = new System.Drawing.Point(30, 138);
+            label3.Location = new System.Drawing.Point(84, 135);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(150, 14);
             label3.TabIndex = 20;
@@ -295,7 +266,7 @@
             // label4
             // 
             label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label4.Location = new System.Drawing.Point(28, 217);
+            label4.Location = new System.Drawing.Point(82, 214);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(92, 14);
             label4.TabIndex = 21;
@@ -304,7 +275,7 @@
             // label6
             // 
             label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label6.Location = new System.Drawing.Point(368, 138);
+            label6.Location = new System.Drawing.Point(422, 135);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(92, 14);
             label6.TabIndex = 23;
@@ -313,7 +284,7 @@
             // label7
             // 
             label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label7.Location = new System.Drawing.Point(368, 217);
+            label7.Location = new System.Drawing.Point(422, 214);
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(92, 14);
             label7.TabIndex = 24;
@@ -322,16 +293,16 @@
             // label8
             // 
             label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label8.Location = new System.Drawing.Point(368, 299);
+            label8.Location = new System.Drawing.Point(422, 296);
             label8.Name = "label8";
             label8.Size = new System.Drawing.Size(92, 14);
             label8.TabIndex = 25;
-            label8.Text = "Adress";
+            label8.Text = "Address";
             // 
             // label9
             // 
             label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label9.Location = new System.Drawing.Point(30, 297);
+            label9.Location = new System.Drawing.Point(84, 294);
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(92, 18);
             label9.TabIndex = 26;
@@ -340,6 +311,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.btnCancel);
+            this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.cbGender);
             this.panel1.Controls.Add(label9);
             this.panel1.Controls.Add(label8);
@@ -353,19 +326,57 @@
             this.panel1.Controls.Add(panel4);
             this.panel1.Controls.Add(pnlLastName);
             this.panel1.Controls.Add(pnlFirstName);
-            this.panel1.Controls.Add(btnCancel);
-            this.panel1.Controls.Add(btnSave);
-            this.panel1.Location = new System.Drawing.Point(0, 3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(700, 500);
+            this.panel1.Size = new System.Drawing.Size(760, 600);
             this.panel1.TabIndex = 3;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(235)))));
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
+            this.btnCancel.Location = new System.Drawing.Point(425, 397);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(120, 40);
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(244, 397);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(120, 40);
+            this.btnSave.TabIndex = 6;
+            this.btnSave.Text = "Save";
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // cbGender
+            // 
+            this.cbGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbGender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cbGender.FormattingEnabled = true;
+            this.cbGender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.cbGender.Location = new System.Drawing.Point(424, 241);
+            this.cbGender.Name = "cbGender";
+            this.cbGender.Size = new System.Drawing.Size(280, 32);
+            this.cbGender.TabIndex = 4;
+            this.cbGender.Text = "Select Gender";
             // 
             // panel7
             // 
             this.panel7.Controls.Add(this.pictureBox2);
             this.panel7.Controls.Add(this.label2);
             this.panel7.Controls.Add(this.label1);
-            this.panel7.Location = new System.Drawing.Point(190, 40);
+            this.panel7.Location = new System.Drawing.Point(244, 37);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(300, 62);
             this.panel7.TabIndex = 19;
@@ -403,17 +414,6 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Fill in the student information";
             // 
-            // cbGender
-            // 
-            this.cbGender.FormattingEnabled = true;
-            this.cbGender.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.cbGender.Location = new System.Drawing.Point(371, 234);
-            this.cbGender.Name = "cbGender";
-            this.cbGender.Size = new System.Drawing.Size(280, 21);
-            this.cbGender.TabIndex = 27;
-            // 
             // ucAddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -421,7 +421,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.panel1);
             this.Name = "ucAddStudent";
-            this.Size = new System.Drawing.Size(744, 561);
+            this.Size = new System.Drawing.Size(760, 600);
             pnlFirstName.ResumeLayout(false);
             pnlFirstName.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -462,5 +462,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.ComboBox cbGender;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

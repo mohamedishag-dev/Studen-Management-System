@@ -18,70 +18,82 @@ namespace Student_Management_System
             InitializeComponent();
         }
 
-        private void LoadData()
-        {
-            for (int i = 1; i <= 20; i++)
-            {
-
-                string[] DataLine = { i.ToString(), "Mohamed Ishag", "21",  "09267226354", "Male", "B303" };
-                dgvStudents.Rows.Add(DataLine);
-
-            }
-
-        }
-
         private void ucStudents_Load(object sender, EventArgs e)
         {
-            if (!File.Exists(DatabasePath))
-            {
-                File.Create(DatabasePath);
-            }
 
-            dgvFillData(DatabasePath, dgvStudents);
+            clsStudent.LoadStudentsDataFromFile(dgvStudents);
+
+            Image imgEidt = Properties.Resources.edit_24;
+            btnEidt.Image = new Bitmap(imgEidt, new Size(24, 24));
+
+            Image imgDelete = Properties.Resources.delete;
+            btnDelete.Image = new Bitmap(imgDelete, new Size(24, 24));
+
+            Image imgRefresh = Properties.Resources.Refresh;
+            btnRefresh.Image = new Bitmap(imgRefresh, new Size(24, 24));
 
         }
-        string DatabasePath = Application.StartupPath + @"\Database.txt";
 
-        private void qucStudents_Load(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (!File.Exists(DatabasePath))
-            {
-                File.Create(DatabasePath);
-            }
+            clsStudent Student = clsStudent.Find(txtIDSearch.Text);
 
-            dgvFillData(DatabasePath, dgvStudents);
+            if (Student.Age != 0)
+            {
+         
+
+                dgvStudents.Rows.Clear();
+                clsStudent.StudentCard(dgvStudents, Student);
+            }
+            else
+            {
+                MessageBox.Show("NO Find ID");
+               
+            }
 
         }
 
-        public static void dgvFillData(string database, DataGridView dgvDatabase)
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            dgvStudents.Rows.Clear();
+            clsStudent.LoadStudentsDataFromFile(dgvStudents);
+            txtIDSearch.Text = string.Empty;
+        }
+
+      
+
+        private void btnDelete_Click(object sender, EventArgs e)
         {
 
-            try
-            {
-                StreamReader reDatabase = new StreamReader(database);
-                string reLine;
+            string StudentID = dgvStudents.CurrentRow.Cells[0].Value.ToString();
 
-                do
-                {
-                    reLine = reDatabase.ReadLine();
-
-                    if (reLine != null)
-                    {
-                        object[] dataLine = reLine.Split(new string[] { "#//#" }, StringSplitOptions.None);
-                        dgvDatabase.Rows.Add(dataLine);
-
-                    }
-                }
-                while (reLine != null);
-                reDatabase.Close();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("ERROR: " + ex);
-            }
+            clsStudent.DeleteStudent(StudentID);
 
         }
 
+        private void dgvStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+        }
+
+        private void btnEidt_Click(object sender, EventArgs e)
+        {
+            clsStudent StudentEdit = clsStudent.Find(txtIDSearch.Text);
+
+            if (StudentEdit.ID != "")
+            {
+
+                frmEditStudent EditStudent = new frmEditStudent(txtIDSearch.Text);
+                EditStudent.ShowDialog();
+            
+            }
+            else
+            {
+                MessageBox.Show("Please Enter your ID","",MessageBoxButtons.OK,MessageBoxIcon.Hand);
+            }
+
+
+        }
     }
 }

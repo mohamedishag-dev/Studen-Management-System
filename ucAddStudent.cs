@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Student_Management_System
 {
@@ -20,77 +22,33 @@ namespace Student_Management_System
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            dgvFillData(DatabasePath);
 
-        }
+            clsStudent Student = new clsStudent();
 
-        private string DatabasePath = Application.StartupPath + @"\Database.txt";
-        public void dgvFillData(string database)
-        {
-
-            string Sepretoer = "#//#";
-            string FullName = txtFirstName.Text + " " + txtLastName.Text;
-            string Age = txtAge.Text;
-            string Phone = txtPhone.Text;
-            string Gender = cbGender.Text;
-            string Address = txtAddress.Text;
-
-            bool SaveState = true;
-
-            if (string.IsNullOrEmpty(FullName) || string.IsNullOrEmpty(Age) || string.IsNullOrEmpty(Phone)
-                || string.IsNullOrEmpty(Gender) || string.IsNullOrEmpty(Address))
+            Student.FirstName = txtFirstName.Text;
+            Student.LastName = txtLastName.Text;
+            Student.Age = Convert.ToInt32(txtAge.Text);
+            Student.Phone = txtPhone.Text;
+            Student.Gender = cbGender.Text;
+            Student.Address = txtAddress.Text;
+            
+            if (clsStudent.AddDataLineToFile(Student))
             {
-
-                Form frmError = new frmMessage("Fill in the voids");
-
+                MessageBox.Show("Adding Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtFirstName.Text = "";
+                txtLastName.Text = "";
+                txtAge.Text = "";
+                txtPhone.Text = "";
+                txtAddress.Text = ""; 
             }
             else
             {
-
-                StreamReader Sr = new StreamReader(database);
-                string reLine;
-
-                int ID = 0;
-
-                do
-                {
-                    reLine = Sr.ReadLine();
-
-                    if (reLine != null)
-                    {
-
-                        string[] LineData = reLine.Split(new string[] { Sepretoer }, StringSplitOptions.None);
-
-                        if (LineData[1] == txtFirstName.Text || LineData[2] == txtLastName.Text ||
-                             LineData[3] == txtPhone.Text)
-                        {
-                            SaveState = false;
-                        }
-
-                    }
-                    ID++;
-                }
-                while (reLine != null);
-                Sr.Close();
-
-                if (SaveState)
-                {
-                    StreamWriter SW = new StreamWriter(database, true);
-                    SW.WriteLine(ID.ToString() + Sepretoer + FullName + Sepretoer + Age + Sepretoer + Phone + Sepretoer + Gender + Sepretoer + Address);
-                    Form frmError = new frmMessage("Adding Successfully");
-                    SW.Close();
-                }
-                else
-                {
-                    Form frmError = new frmMessage("Fill in the voids");
-
-                }
+                MessageBox.Show("Fill in the voids", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
-
         }
 
-      
+     
     }
 }

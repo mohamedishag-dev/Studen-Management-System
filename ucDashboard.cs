@@ -17,23 +17,19 @@ namespace Student_Management_System
             InitializeComponent();
         }
 
-        private void LoadData()
+        private void btnViewAll_Click(object sender, EventArgs e)
         {
-
-
-            for (int i = 1; i <= 20; i++)
-            {
-                string[] DataLine = { i.ToString(), "Mohamed Ishag", "21",  "09267226354", "Male", "B303" };
-
-                dgvStudents.Rows.Add((DataLine));
-
-            }
-
+            dgvStudent.Rows.Clear();
+            clsStudent.LoadStudentsDataFromFile(dgvStudent);
+            lblTotalStudents.Text = clsStudent.Total().ToString();
         }
 
-        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        private void ucDashboard_Load(object sender, EventArgs e)
         {
-            LoadData();
+            clsStudent.LoadStudentsDataFromFile(dgvStudent, false);
+            lblTotalStudents.Text = clsStudent.Total().ToString();
+
         }
     }
+
 }

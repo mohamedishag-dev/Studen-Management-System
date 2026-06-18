@@ -11,22 +11,8 @@ E:\ProgarmmingAdvises\Student Management System\obj\Debug\Student_Management_Sys
 E:\ProgarmmingAdvises\Student Management System\obj\Debug\Student_Management_System.ucStudents.resources
 E:\ProgarmmingAdvises\Student Management System\obj\Debug\Student_Management_System.ucAddStudent.resources
 E:\ProgarmmingAdvises\Student Management System\obj\Debug\Student_Management_System.ucUsers.resources
-E:\ProgarmmingAdvises\Student Management System\obj\Debug\Student_Management_System.ucDashboard.resources
 E:\ProgarmmingAdvises\Student Management System\obj\Debug\Student_Management_System.frmLogin.resources
 E:\ProgarmmingAdvises\Student Management System\obj\Debug\Student_Management_System.frmMessage.resources
-E:\Profects\Studen-Management-System\bin\Debug\Student Management System.exe.config
-E:\Profects\Studen-Management-System\bin\Debug\Student Management System.exe
-E:\Profects\Studen-Management-System\bin\Debug\Student Management System.pdb
-E:\Profects\Studen-Management-System\obj\Debug\Student Management System.csproj.AssemblyReference.cache
-E:\Profects\Studen-Management-System\obj\Debug\Student_Management_System.frmDashboard.resources
-E:\Profects\Studen-Management-System\obj\Debug\Student_Management_System.frmLogin.resources
-E:\Profects\Studen-Management-System\obj\Debug\Student_Management_System.frmMessage.resources
-E:\Profects\Studen-Management-System\obj\Debug\Student_Management_System.Properties.Resources.resources
-E:\Profects\Studen-Management-System\obj\Debug\Student_Management_System.ucAddStudent.resources
-E:\Profects\Studen-Management-System\obj\Debug\Student_Management_System.ucDashboard.resources
-E:\Profects\Studen-Management-System\obj\Debug\Student_Management_System.ucStudents.resources
-E:\Profects\Studen-Management-System\obj\Debug\Student_Management_System.ucUsers.resources
-E:\Profects\Studen-Management-System\obj\Debug\Student Management System.csproj.GenerateResource.cache
-E:\Profects\Studen-Management-System\obj\Debug\Student Management System.csproj.CoreCompileInputs.cache
-E:\Profects\Studen-Management-System\obj\Debug\Student Management System.exe
-E:\Profects\Studen-Management-System\obj\Debug\Student Management System.pdb
+E:\ProgarmmingAdvises\Student Management System\obj\Debug\Student_Management_System.ucDashboard.resources
+E:\ProgarmmingAdvises\Student Management System\obj\Debug\Student_Management_System.ucEditStudent.resources
+E:\ProgarmmingAdvises\Student Management System\obj\Debug\Student_Management_System.frmEditStudent.resources
