@@ -1,3 +1,4 @@
+
 # Student Management System
 
 A simple Student Management System built with C# Windows Forms and File Handling (TXT Database).
@@ -53,19 +54,18 @@ STU001#//#Mohamed#//#Ishag#//#20#//#01000000000#//#Male#//#Cairo
 
 ### Login Screen
 
-( )
+<img width="432" height="632" alt="Login Screen" src="https://github.com/user-attachments/assets/1f3a7aec-5ff6-415f-887c-7d79c72b006e" />
 
-### Main Screen
+### Dashboard Screen
 
-( )
+<img width="979" height="590" alt="Dashboard Screen" src="https://github.com/user-attachments/assets/3a7ef92f-aaf8-4d96-9861-b8d54598dab6" />
 
-### Add Student Screen
+### Add and Edit Student Screens
 
-( )
+<img width="984" height="582" alt="Add Student Screen" src="https://github.com/user-attachments/assets/0dd02873-4c53-4a4b-afbc-21b41a41d3e0" />
 
-### Search Student Screen
+<img width="681" height="514" alt="Edit Student Screen" src="https://github.com/user-attachments/assets/97edaba1-2e17-4e72-be31-e8ff4cea8af5" />
 
-( )
 
 ## Future Improvements
 
