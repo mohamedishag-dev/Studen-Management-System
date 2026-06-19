@@ -24,7 +24,7 @@ namespace Student_Management_System
         {
 
             clsStudent Student = new clsStudent();
-
+         //   Student.ID = "STU0";
             Student.FirstName = txtFirstName.Text;
             Student.LastName = txtLastName.Text;
             Student.Age = Convert.ToInt32(txtAge.Text);
@@ -32,7 +32,7 @@ namespace Student_Management_System
             Student.Gender = cbGender.Text;
             Student.Address = txtAddress.Text;
             
-            if (clsStudent.AddDataLineToFile(Student))
+            if (clsStudent.Add(Student))
             {
                 MessageBox.Show("Adding Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtFirstName.Text = "";

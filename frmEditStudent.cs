@@ -12,15 +12,15 @@ namespace Student_Management_System
 {
     public partial class frmEditStudent : Form
     {
-        public frmEditStudent(string ID)
+        public frmEditStudent(string StudentID)
         {
             InitializeComponent();
 
-             StudentEdit = clsStudent.Find(ID);
+             StudentEdit = clsStudent.Find(StudentID);
 
 
         }
-        clsStudent StudentEdit;
+        private clsStudent StudentEdit;
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -46,7 +46,23 @@ namespace Student_Management_System
 
         private void btnUpdata_Click(object sender, EventArgs e)
         {
+            StudentEdit.FirstName = txtFirstName.Text;
+            StudentEdit.LastName = txtLastName.Text;
+            StudentEdit.Age = Convert.ToInt32(txtAge.Text);
+            StudentEdit.Phone = txtPhone.Text;
+            StudentEdit.Gender = cbGender.Text;
+            StudentEdit.Address = txtAddress.Text;
 
+            if (clsStudent.UpdateStudent(StudentEdit))
+            {
+                MessageBox.Show("Edited Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Fill in the voids", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
     }
 }

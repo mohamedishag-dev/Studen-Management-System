@@ -19,15 +19,39 @@ namespace Student_Management_System
 
         private void btnViewAll_Click(object sender, EventArgs e)
         {
+
             dgvStudent.Rows.Clear();
-            clsStudent.LoadStudentsDataFromFile(dgvStudent);
-            lblTotalStudents.Text = clsStudent.Total().ToString();
+
+            List<clsStudent> students = clsStudent.LoadStudents();
+            short Conu = 0;
+
+            foreach (var item in students)
+            {
+                dgvStudent.Rows.Add(clsStudent.StudentSearch(item));
+                Conu++;
+            }
+            lblTotalStudents.Text = Conu.ToString();
+
         }
 
         private void ucDashboard_Load(object sender, EventArgs e)
         {
-            clsStudent.LoadStudentsDataFromFile(dgvStudent, false);
-            lblTotalStudents.Text = clsStudent.Total().ToString();
+
+            List<clsStudent> students = clsStudent.LoadStudents();
+            short Conu = 0;
+
+            foreach (var item in students)
+            {
+                if (Conu == 5) 
+                {
+                    break;
+                }
+                dgvStudent.Rows.Add(clsStudent.StudentSearch(item));
+                Conu++;
+            }
+
+            lblTotalStudents.Text = Conu.ToString();
+
 
         }
     }

@@ -16,11 +16,9 @@ namespace Student_Management_System
     public class clsStudent
     {
 
-        static string DatabasePath = Application.StartupPath + @"\Database.txt";
+        private static string DatabasePath = Application.StartupPath + @"\Database.txt";
         private static string Seperator = "#//#";
-        private static int TotalStudent = 0;
 
-        private bool MarkDelete = false;
         public string ID { get; set; }
 
         public string FirstName { get; set; }
@@ -37,13 +35,13 @@ namespace Student_Management_System
 
         public clsStudent()
         {
-            ID = "";
-            FirstName = "";
-            LastName = "";
+            ID = null;
+            FirstName = null;
+            LastName = null;
             Age = 0;
-            Phone = "";
-            Gender = "";
-            Address = "";
+            Phone = null;
+            Gender = null;
+            Address = null;
         }
 
         public clsStudent(string iD, string firstName, string lastName, int age, string phone, string gender, string address)
@@ -57,7 +55,7 @@ namespace Student_Management_System
             Address = address;
         }
 
-        private static clsStudent _ConvertLineToStudentObject(string Line)
+        private static clsStudent ConvertLineToStudentObject(string Line)
         {
             string[] DataLine =
                 Line.Split(new string[] { Seperator },
@@ -74,61 +72,7 @@ namespace Student_Management_System
             );
         }
 
-        public static int Total()
-        {
-
-            return TotalStudent;
-        }
-
-        public static void LoadStudentsDataFromFile(DataGridView dgvDatabase, bool IsAll = true)
-        {
-            TotalStudent = 0;
-          
-            StreamReader reDatabase = new StreamReader(DatabasePath);
-            string reLine;
-
-            do
-            {
-                reLine = reDatabase.ReadLine();
-
-                if (reLine != null)
-                {
-                    string[] dataLine = reLine.Split(new string[] { Seperator }, StringSplitOptions.None);
-                    dgvDatabase.Rows.Add(dataLine);
-                    TotalStudent++;
-                }
-                if (TotalStudent == 5 && !IsAll)
-                {
-                    return;
-                }
-            }
-            while (reLine != null);
-            reDatabase.Close();
-
-        }
-
-        public static bool StudentCard(DataGridView dgvDatabase, clsStudent Student)
-        {
-            if (string.IsNullOrEmpty(Student.FirstName) || string.IsNullOrEmpty(Student.LastName) || Student.Age <= 0 || string.IsNullOrEmpty(Student.Phone)
-              || string.IsNullOrEmpty(Student.Gender) || string.IsNullOrEmpty(Student.Address))
-            {
-
-                return false;
-
-            }
-            else
-            {
-
-                string reLine = _ConverStudentObjectToLine(Student);
-                object[] dataLine = reLine.Split(new string[] { "#//#" }, StringSplitOptions.None);
-                dgvDatabase.Rows.Add(dataLine);
-
-                return true;
-            }
-
-        }
-
-        public static string _ConverStudentObjectToLine(clsStudent Student)
+        private static string ConverStudentObjectToLine(clsStudent Student)
         {
 
             string StudentRecord = "";
@@ -143,172 +87,189 @@ namespace Student_Management_System
 
         }
 
-        public static clsStudent Find(string ID)
+        public static List<clsStudent> LoadStudents()
         {
 
-            clsStudent Student = new clsStudent();
+            List<clsStudent> students = new List<clsStudent>();
 
-            StreamReader reDatabase = new StreamReader(DatabasePath);
-            string reLine;
-
-            do
+            using (StreamReader reDatabase = new StreamReader(DatabasePath))
             {
+                string reLine;
 
-                reLine = reDatabase.ReadLine();
-
-                if (reLine != null)
+                do
                 {
+                    reLine = reDatabase.ReadLine();
 
-                    Student = _ConvertLineToStudentObject(reLine);
-                    if (Student.ID == ID)
+                    if (reLine != null)
                     {
-                        return Student;
+
+                        students.Add(ConvertLineToStudentObject(reLine));
 
                     }
 
                 }
+                while (reLine != null);
+
             }
-            while (reLine != null);
-            reDatabase.Close();
 
-            Student = new clsStudent();
-
-            return Student;
+            return students;
         }
 
-        private static string GanretingID()
+        public static clsStudent Find(string StudentID)
         {
-            TotalStudent++;
-            if (TotalStudent <= 9)
-                return "STU00" + TotalStudent;
-            else if (TotalStudent <= 99)
-                return "STU0" + TotalStudent;
+
+            List<clsStudent> Students = LoadStudents();
+
+            foreach (var item in Students)
+            {
+
+                if (item.ID == StudentID)
+                {
+
+                    return item;
+
+                }
+            }
+            clsStudent studentEmtpy = new clsStudent();
+            return studentEmtpy;
+
+        }
+
+        public static bool IsValidStudent(clsStudent Student)
+        {
+            return !string.IsNullOrWhiteSpace(Student.FirstName)
+                && !string.IsNullOrWhiteSpace(Student.LastName)
+                && Student.Age > 0
+                && !string.IsNullOrWhiteSpace(Student.Phone)
+                && !string.IsNullOrWhiteSpace(Student.Gender)
+                && !string.IsNullOrWhiteSpace(Student.Address);
+        }
+
+        private static string GenerateID()
+        {
+
+            List<clsStudent> Students = LoadStudents();
+            if (Students.Count == 0) 
+            {
+
+                return "STU001";
+            }
             else
-                return "STU" + TotalStudent;
+            {
+                string LastStudent = Students[Students.Count - 1].ID;
+                int Number = Convert.ToInt32(LastStudent.Substring(3));
+
+                Number++;
+                if (Number <= 9)
+                    return "STU00" + Number;
+                else if (Number <= 99)
+                    return "STU0" + Number;
+                else
+                    return "STU" + Number;
+            }
 
         }
-
-        public static bool AddDataLineToFile(clsStudent Student)
+       
+        public static bool Add(clsStudent Student)
         {
 
-            if (string.IsNullOrEmpty(Student.FirstName) || string.IsNullOrEmpty(Student.LastName) || Student.Age <= 0 || string.IsNullOrEmpty(Student.Phone)
-               || string.IsNullOrEmpty(Student.Gender) || string.IsNullOrEmpty(Student.Address))
+            if (IsValidStudent(Student))
+            {
+                Student.ID = GenerateID();
+
+                using (StreamWriter reDatabase = new StreamWriter(DatabasePath, true))
+                {
+
+                    reDatabase.WriteLine(ConverStudentObjectToLine(Student));
+                    return true;
+                }
+
+            }
+            else
             {
 
                 return false;
 
             }
 
-            else
-            {
-                Student.ID = GanretingID();
-                StreamWriter SW = new StreamWriter(DatabasePath, true);
-                SW.WriteLine(_ConverStudentObjectToLine(Student));
-                SW.Close();
-                
-                return true;
+        }
 
+        private static void SaveStudents(List<clsStudent> Students)
+        {
+
+            System.IO.File.WriteAllText(DatabasePath, "");
+
+            foreach (clsStudent Student in Students)
+            {
+
+                using (StreamWriter reDatabase = new StreamWriter(DatabasePath, true))
+                {
+
+                    reDatabase.WriteLine(ConverStudentObjectToLine(Student));
+
+                }
             }
+
 
         }
 
-        public static void _Update(clsStudent Student)
+        public static bool UpdateStudent(clsStudent StudentEdit)
         {
-
-            StreamReader reDatabase = new StreamReader(DatabasePath);
-            string reLine;
-            do
+            if (IsValidStudent(StudentEdit))
             {
-                reLine = reDatabase.ReadLine();
 
-                if (reLine != null)
+                List<clsStudent> Students = LoadStudents();
+
+                for (int item = 0; item < Students.Count; item++)
                 {
-                    string[] dataLine = reLine.Split(new string[] { Seperator }, StringSplitOptions.None);
-
-                    if (Student.ID == dataLine[0])
+                    if (Students[item].ID == StudentEdit.ID)
                     {
-                        Student.MarkDelete = true;
+                        Students[item] = StudentEdit;
+                        break;
                     }
                 }
 
+                SaveStudents(Students);
+                return true;
             }
-            while (reLine != null);
-            reDatabase.Close();
-
-
+            return false;
         }
-      
+
+        public static bool DeleteStudent(clsStudent StudentDelete)
+        {
+            if (IsValidStudent(StudentDelete))
+            {
+
+                List<clsStudent> Students = LoadStudents();
+
+                for (int item = 0; item < Students.Count; item++)
+                {
+                    if (Students[item].ID == StudentDelete.ID)
+                    {
+                        Students.RemoveAt(item); 
+                        break;
+                    }
+                }
+
+                SaveStudents(Students);
+                return true;
+            }
+            return false;
+        }
+
         public static void DeleteStudent(string StudentID)
         {
 
+            clsStudent Student = Find(StudentID);
+            DeleteStudent(Student);
 
-            //StreamReader reDatabase = new StreamReader(DatabasePath);
-            //System.IO.File.WriteAllText(DatabasePath, "");
-
-            //string reLine;
-
-            //do
-            //{
-            //    reLine = reDatabase.ReadLine();
-
-            //    if (reLine != null)
-            //    {
-            //        string[] dataLine = reLine.Split(new string[] { Seperator }, StringSplitOptions.None);
-
-            //        if (dataLine[0] == StudentID)
-            //        {
-            //            StreamWriter SW = new StreamWriter(DatabasePath, true);
-            //            SW.WriteLine(reLine);
-            //            SW.Close();
-            //        }
-            //    }
-              
-            //}
-            //while (reLine != null);
-            //reDatabase.Close();
-
-
-            //List<string> Lines = System.IO.File.ReadAllLines(DatabasePath).ToList();
-
-            //Lines.RemoveAll(Line =>
-            //{
-            //    string[] Data = Line.Split(new string[] { Seperator }, StringSplitOptions.None);
-
-            //    return Data[0] == StudentID;
-
-            //});
-
-            //System.IO.File.WriteAllLines(DatabasePath, Lines);
-
-            //if (MessageBox.Show("هل تريد حذف جميع البيانات؟",
-            //                    "تأكيد",
-            //                    MessageBoxButtons.YesNo,
-            //                    MessageBoxIcon.Warning) == DialogResult.Yes)
-            //{
-            //    File.WriteAllText(DatabasePath, "");
-            //    MessageBox.Show("تم حذف جميع البيانات بنجاح");
-            //}
         }
-        public static bool SaveDataLineToFile(clsStudent Student)
+
+        public static string[] StudentSearch(clsStudent Student)
         {
 
-            if (string.IsNullOrEmpty(Student.FirstName) || string.IsNullOrEmpty(Student.LastName) || Student.Age <= 0 || string.IsNullOrEmpty(Student.Phone)
-               || string.IsNullOrEmpty(Student.Gender) || string.IsNullOrEmpty(Student.Address))
-            {
-
-                return false;
-
-            }
-
-            else
-            {
-                StreamWriter SW = new StreamWriter(DatabasePath, true);
-                SW.WriteLine(_ConverStudentObjectToLine(Student));
-                SW.Close();
-
-                return true;
-
-            }
+            string[] dataLine = ConverStudentObjectToLine(Student).Split(new string[] { Seperator }, StringSplitOptions.None);
+            return dataLine;
 
         }
 

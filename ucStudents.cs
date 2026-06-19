@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Student_Management_System
@@ -21,7 +15,16 @@ namespace Student_Management_System
         private void ucStudents_Load(object sender, EventArgs e)
         {
 
-            clsStudent.LoadStudentsDataFromFile(dgvStudents);
+            List<clsStudent> students = clsStudent.LoadStudents();
+            short Conu = 0;
+
+            foreach (var item in students)
+            {
+                dgvStudents.Rows.Add(clsStudent.StudentSearch(item));
+                Conu++;
+
+            }
+            lblTotalStudents.Text = Conu.ToString();
 
             Image imgEidt = Properties.Resources.edit_24;
             btnEidt.Image = new Bitmap(imgEidt, new Size(24, 24));
@@ -36,19 +39,17 @@ namespace Student_Management_System
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            clsStudent Student = clsStudent.Find(txtIDSearch.Text);
 
-            if (Student.Age != 0)
+            if (!string.IsNullOrWhiteSpace(txtIDSearch.Text))
             {
-         
-
+                clsStudent Student = clsStudent.Find(txtIDSearch.Text);
                 dgvStudents.Rows.Clear();
-                clsStudent.StudentCard(dgvStudents, Student);
+                dgvStudents.Rows.Add(clsStudent.StudentSearch(Student));
+                
             }
             else
             {
                 MessageBox.Show("NO Find ID");
-               
             }
 
         }
@@ -56,24 +57,40 @@ namespace Student_Management_System
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             dgvStudents.Rows.Clear();
-            clsStudent.LoadStudentsDataFromFile(dgvStudents);
-            txtIDSearch.Text = string.Empty;
-        }
 
-      
+            List<clsStudent> students = clsStudent.LoadStudents();
+
+            foreach (var item in students)
+            {
+                dgvStudents.Rows.Add(clsStudent.StudentSearch(item));
+
+            }
+            txtIDSearch.Text = string.Empty;
+
+        }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
             string StudentID = dgvStudents.CurrentRow.Cells[0].Value.ToString();
 
-            clsStudent.DeleteStudent(StudentID);
+            
+            if (MessageBox.Show("Are your delete this Student " + StudentID, "", MessageBoxButtons.YesNo, 
+                MessageBoxIcon.Asterisk) == DialogResult.Yes) 
+            {
+                clsStudent.DeleteStudent(StudentID);
 
-        }
+                dgvStudents.Rows.Clear();
 
-        private void dgvStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+                List<clsStudent> students = clsStudent.LoadStudents();
 
+                foreach (var item in students)
+                {
+                    dgvStudents.Rows.Add(clsStudent.StudentSearch(item));
+
+                }
+                txtIDSearch.Text = string.Empty;
+            }
 
         }
 
@@ -95,5 +112,6 @@ namespace Student_Management_System
 
 
         }
+
     }
 }
