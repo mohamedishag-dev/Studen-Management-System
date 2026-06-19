@@ -77,5 +77,5 @@ STU001#//#Mohamed#//#Ishag#//#20#//#01000000000#//#Male#//#Cairo
 ## Author
 
 - **Mohamed Ishag**:[@mohamedishag](https://github.com/user-attachments/assets/bedb4d22-ca85-48e3-b4e1-5e4d5ac993ae)
-- **linkedin:**[@mohamedishag](https://www.linkedin.com/in/mohamed-ishag-8328683ba)
+- **linkedin:**[@mohamedishag](https://www.linkedin.com/posts/mohamed-ishag-8328683ba_csharp-winforms-csharp-ugcPost-7473792073071140864-NnPj/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGZJYKYBITXi8MlM82HY1BXYGL4SbnuDnHs)
 
