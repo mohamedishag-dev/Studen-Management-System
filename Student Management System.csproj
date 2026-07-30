@@ -46,29 +46,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsStudent.cs" />
-    <Compile Include="frmEditStudent.cs">
+    <Compile Include="Constants.cs" />
+    <Compile Include="Models\clsStudent.cs" />
+    <Compile Include="Models\clsUser.cs" />
+    <Compile Include="Controllers\frmEditStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEditStudent.Designer.cs">
+    <Compile Include="Controllers\frmEditStudent.Designer.cs">
       <DependentUpon>frmEditStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDashboard.cs">
+    <Compile Include="Controllers\frmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDashboard.Designer.cs">
+    <Compile Include="Controllers\frmDashboard.Designer.cs">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin.cs">
+    <Compile Include="Controllers\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
+    <Compile Include="Controllers\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMessage.cs">
+    <Compile Include="Controllers\frmMessage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMessage.Designer.cs">
+    <Compile Include="Controllers\frmMessage.Designer.cs">
       <DependentUpon>frmMessage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -78,46 +80,50 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ucAddStudent.cs">
+    <Compile Include="Controllers\ucAddStudent.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucAddStudent.Designer.cs">
+    <Compile Include="Controllers\ucAddStudent.Designer.cs">
       <DependentUpon>ucAddStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucDashboard.cs">
+    <Compile Include="Controllers\ucDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucDashboard.Designer.cs">
+    <Compile Include="Controllers\ucDashboard.Designer.cs">
       <DependentUpon>ucDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucEditStudent.cs">
+    <Compile Include="Controllers\ucEditStudent.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucEditStudent.Designer.cs">
+    <Compile Include="Controllers\ucEditStudent.Designer.cs">
       <DependentUpon>ucEditStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucStudents.cs">
+    <Compile Include="Controllers\ucStudents.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucStudents.Designer.cs">
+    <Compile Include="Controllers\ucStudents.Designer.cs">
       <DependentUpon>ucStudents.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucUsers.cs">
+    <Compile Include="Controllers\ucUsers.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucUsers.Designer.cs">
+    <Compile Include="Controllers\ucUsers.Designer.cs">
       <DependentUpon>ucUsers.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmEditStudent.resx">
+    <Compile Include="Repositories\IGenericRepository.cs" />
+    <Compile Include="Services\IGenericService.cs" />
+    <Compile Include="Services\StudentService.cs" />
+    <Compile Include="Services\UserService.cs" />
+    <EmbeddedResource Include="Controllers\frmEditStudent.resx">
       <DependentUpon>frmEditStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDashboard.resx">
+    <EmbeddedResource Include="Controllers\frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
+    <EmbeddedResource Include="Controllers\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMessage.resx">
+    <EmbeddedResource Include="Controllers\frmMessage.resx">
       <DependentUpon>frmMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -125,19 +131,19 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucAddStudent.resx">
+    <EmbeddedResource Include="Controllers\ucAddStudent.resx">
       <DependentUpon>ucAddStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucDashboard.resx">
+    <EmbeddedResource Include="Controllers\ucDashboard.resx">
       <DependentUpon>ucDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucEditStudent.resx">
+    <EmbeddedResource Include="Controllers\ucEditStudent.resx">
       <DependentUpon>ucEditStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucStudents.resx">
+    <EmbeddedResource Include="Controllers\ucStudents.resx">
       <DependentUpon>ucStudents.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucUsers.resx">
+    <EmbeddedResource Include="Controllers\ucUsers.resx">
       <DependentUpon>ucUsers.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -246,5 +252,6 @@
   <ItemGroup>
     <None Include="Resources\save_edit.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
