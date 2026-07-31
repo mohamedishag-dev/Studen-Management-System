@@ -1,4 +1,5 @@
 ﻿using Student_Management_System.Repositories;
+using Student_Management_System.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,28 +17,26 @@ namespace Student_Management_System
         static void Main()
         {
 
+            //StudentService StudentS = new StudentService();
 
-            clsUser User = new clsUser("Ali Ahmed", "User001", "1234", "Admin", true);
+            //clsStudent student = StudentS.GetByUsername("STU013");
 
-            UserService userService = new UserService();
+            //student.FirstName = "FirstName";
+            //student.LastName = "LastName";
+            //student.Address = "B303";
 
-            List<clsUser> Users =  userService.GetAll();
+            //StudentS.Update(student);
 
-            foreach (var item in Users)
-            {
-                Console.WriteLine(User.FullName);
-            }
-            //userService.Add(User);
+            //Console.WriteLine(student.ID);
+            //Console.WriteLine(student.FirstName + " " + student.FirstName);
+            //Console.WriteLine(student.Gender);
 
-            //Console.WriteLine(User.FullName); // يجب أن تكون 8
-            //Console.WriteLine(User.Username); // يجب أن تكون 8
-            //Console.WriteLine(User.PasswordHash); // يجب أن تكون 8
-            //Console.WriteLine(User.Role); // يجب أن تكون 8
-            //Console.WriteLine(User.IsActive); // يجب أن تكون 8
 
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmLogin());
+
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new frmLogin());
+
         }
     }
 }

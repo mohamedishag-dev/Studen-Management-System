@@ -10,14 +10,10 @@ namespace Student_Management_System.Repositories
 {
     internal class UserService : IGenericService<clsUser>
     {
-
-        private static string UsersFile = Application.StartupPath + @"\users.txt";
-        private static string Seperator = "#//#";
-
         private static clsUser ConvertRecordToUserObject(string record)
         {
             string[] DataRecord =
-                record.Split(new string[] { Seperator },
+                record.Split(new string[] { Constants.Separator },
                 StringSplitOptions.None);
 
 
@@ -33,23 +29,23 @@ namespace Student_Management_System.Repositories
         {
 
             string UserRecord = "";
-            UserRecord = User.FullName + Seperator;
-            UserRecord += User.Username + Seperator;
-            UserRecord += User.PasswordHash + Seperator;
-            UserRecord += User.Role + Seperator;
-            UserRecord += User.IsActive + Seperator;
+            UserRecord = User.FullName + Constants.Separator;
+            UserRecord += User.Username + Constants.Separator;
+            UserRecord += User.PasswordHash + Constants.Separator;
+            UserRecord += User.Role + Constants.Separator;
+            UserRecord += User.IsActive;
             return UserRecord;
 
         }
         private static void ChangeDate(List<clsUser> Users)
         {
 
-            System.IO.File.WriteAllText(UsersFile, "");
+            System.IO.File.WriteAllText(Constants.UsersFile, "");
 
             foreach (clsUser User in Users)
             {
 
-                using (StreamWriter reDatabase = new StreamWriter(UsersFile, true))
+                using (StreamWriter reDatabase = new StreamWriter(Constants.UsersFile, true))
                 {
 
                     reDatabase.WriteLine(ConverUserObjectToLine(User));
@@ -63,7 +59,7 @@ namespace Student_Management_System.Repositories
         {
             List<clsUser> Users = new List<clsUser>();
 
-            using (StreamReader reDatabase = new StreamReader(UsersFile))
+            using (StreamReader reDatabase = new StreamReader(Constants.UsersFile))
             {
                 string record;
 
@@ -108,7 +104,7 @@ namespace Student_Management_System.Repositories
         public void Add(clsUser record)
         {
 
-            using (StreamWriter reDatabase = new StreamWriter(UsersFile, true))
+            using (StreamWriter reDatabase = new StreamWriter(Constants.UsersFile, true))
             {
 
                 reDatabase.WriteLine(ConverUserObjectToLine(record));
@@ -156,4 +152,3 @@ namespace Student_Management_System.Repositories
     }
   
 }
-

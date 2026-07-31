@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Student_Management_System.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,8 +17,9 @@ namespace Student_Management_System
         {
             InitializeComponent();
 
-             StudentEdit = clsStudent.Find(StudentID);
+            StudentService studentService = new StudentService();
 
+            StudentEdit = studentService.GetByUsername(StudentID);
 
         }
         private clsStudent StudentEdit;
@@ -46,6 +48,7 @@ namespace Student_Management_System
 
         private void btnUpdata_Click(object sender, EventArgs e)
         {
+
             StudentEdit.FirstName = txtFirstName.Text;
             StudentEdit.LastName = txtLastName.Text;
             StudentEdit.Age = Convert.ToInt32(txtAge.Text);
@@ -53,16 +56,11 @@ namespace Student_Management_System
             StudentEdit.Gender = cbGender.Text;
             StudentEdit.Address = txtAddress.Text;
 
-            if (clsStudent.UpdateStudent(StudentEdit))
-            {
-                MessageBox.Show("Edited Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Fill in the voids", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            StudentService studentService = new StudentService();
 
-            }
+            studentService.Update(StudentEdit);
+            this.Close();
+
         }
     }
 }

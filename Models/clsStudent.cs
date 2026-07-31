@@ -16,18 +16,17 @@ namespace Student_Management_System
     public class clsStudent
     {
 
-        private static string DatabasePath = Application.StartupPath + @"\Database.txt";
         private static string Seperator = "#//#";
 
-            public string ID { get; set; } = string.Empty;
-            public string FirstName { get; set; } = string.Empty;
-            public string LastName { get; set; } = string.Empty;
-            public int Age { get; set; }
-            public string Gender { get; set; } = string.Empty;
-            public string Phone { get; set; } = string.Empty;
-            public string Address { get; set; } = string.Empty;
-            public string Email { get; set; } = string.Empty;
-        
+
+        public string ID { get; set; } = string.Empty;
+        public string FirstName { get; set; } = string.Empty;
+        public string LastName { get; set; } = string.Empty;
+        public int Age { get; set; }
+        public string Gender { get; set; } = string.Empty;
+        public string Phone { get; set; } = string.Empty;
+        public string Address { get; set; } = string.Empty;
+
 
         public clsStudent()
         {
@@ -40,7 +39,8 @@ namespace Student_Management_System
             Address = null;
         }
 
-        public clsStudent(string iD, string firstName, string lastName, int age, string phone, string gender, string address)
+        public clsStudent(string iD, string firstName, string lastName, int age,
+            string phone, string gender, string address)
         {
             ID = iD;
             FirstName = firstName;
@@ -88,7 +88,7 @@ namespace Student_Management_System
 
             List<clsStudent> students = new List<clsStudent>();
 
-            using (StreamReader reDatabase = new StreamReader(DatabasePath))
+            using (StreamReader reDatabase = new StreamReader(Constants.StudentsFile))
             {
                 string reLine;
 
@@ -173,7 +173,7 @@ namespace Student_Management_System
             {
                 Student.ID = GenerateID();
 
-                using (StreamWriter reDatabase = new StreamWriter(DatabasePath, true))
+                using (StreamWriter reDatabase = new StreamWriter(Constants.StudentsFile, true))
                 {
 
                     reDatabase.WriteLine(ConverStudentObjectToLine(Student));
@@ -193,12 +193,12 @@ namespace Student_Management_System
         private static void SaveStudents(List<clsStudent> Students)
         {
 
-            System.IO.File.WriteAllText(DatabasePath, "");
+            System.IO.File.WriteAllText(Constants.StudentsFile, "");
 
             foreach (clsStudent Student in Students)
             {
 
-                using (StreamWriter reDatabase = new StreamWriter(DatabasePath, true))
+                using (StreamWriter reDatabase = new StreamWriter(Constants.StudentsFile, true))
                 {
 
                     reDatabase.WriteLine(ConverStudentObjectToLine(Student));

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Student_Management_System.Services;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -20,7 +21,7 @@ namespace Student_Management_System
 
             foreach (var item in students)
             {
-                dgvStudents.Rows.Add(clsStudent.StudentSearch(item));
+                dgvStudents.Rows.Add(StudentService.GetStudent(item));
                 Conu++;
 
             }
@@ -44,7 +45,7 @@ namespace Student_Management_System
             {
                 clsStudent Student = clsStudent.Find(txtIDSearch.Text);
                 dgvStudents.Rows.Clear();
-                dgvStudents.Rows.Add(clsStudent.StudentSearch(Student));
+                dgvStudents.Rows.Add(StudentService.GetStudent(Student));
                 
             }
             else
@@ -58,13 +59,20 @@ namespace Student_Management_System
         {
             dgvStudents.Rows.Clear();
 
-            List<clsStudent> students = clsStudent.LoadStudents();
+            StudentService studentService = new StudentService();
+
+            List<clsStudent> students = studentService.GetAll();
+
 
             foreach (var item in students)
             {
-                dgvStudents.Rows.Add(clsStudent.StudentSearch(item));
-
+                if (dgvStudents.Rows.Count == 5)
+                {
+                    break;
+                }
+                dgvStudents.Rows.Add(StudentService.GetStudent(item));
             }
+ 
             txtIDSearch.Text = string.Empty;
 
         }
@@ -86,7 +94,7 @@ namespace Student_Management_System
 
                 foreach (var item in students)
                 {
-                    dgvStudents.Rows.Add(clsStudent.StudentSearch(item));
+                    dgvStudents.Rows.Add(StudentService.GetStudent(item));
 
                 }
                 txtIDSearch.Text = string.Empty;
@@ -98,10 +106,22 @@ namespace Student_Management_System
         {
             clsStudent StudentEdit = clsStudent.Find(txtIDSearch.Text);
 
+            string StudentID = dgvStudents.CurrentRow.Cells[0].Value.ToString();
+            StudentService studentService = new StudentService();
             if (StudentEdit.ID != "")
             {
+                frmEditStudent EditStudent = new frmEditStudent(StudentID);
 
-                frmEditStudent EditStudent = new frmEditStudent(txtIDSearch.Text);
+                if (studentService.IsExit(txtIDSearch.Text))
+                {
+                    EditStudent = new frmEditStudent(txtIDSearch.Text);
+                }
+                else
+                {
+                    EditStudent = new frmEditStudent(StudentID);
+
+                }
+                
                 EditStudent.ShowDialog();
             
             }

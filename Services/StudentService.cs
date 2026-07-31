@@ -12,13 +12,10 @@ namespace Student_Management_System.Services
     internal class StudentService : IGenericService<clsStudent>
     {
 
-        private static string UsersFile = Application.StartupPath + @"\students.txt";
-        private static string Seperator = "#//#";
-
-        private static clsStudent ConvertRecordToStudentObject(string Line)
+        private static clsStudent ConvertRecordToStudentObject(string record)
         {
             string[] DataLine =
-                Line.Split(new string[] { Seperator },
+                record.Split(new string[] { Constants.Separator },
                 StringSplitOptions.None);
 
             return new clsStudent(
@@ -36,12 +33,12 @@ namespace Student_Management_System.Services
         {
 
             string StudentRecord = "";
-            StudentRecord = Student.ID + Seperator;
-            StudentRecord += Student.FirstName + Seperator;
-            StudentRecord += Student.LastName + Seperator;
-            StudentRecord += Student.Age.ToString() + Seperator;
-            StudentRecord += Student.Phone + Seperator;
-            StudentRecord += Student.Gender + Seperator;
+            StudentRecord = Student.ID + Constants.Separator;
+            StudentRecord += Student.FirstName + Constants.Separator;
+            StudentRecord += Student.LastName + Constants.Separator;
+            StudentRecord += Student.Age.ToString() + Constants.Separator;
+            StudentRecord += Student.Phone + Constants.Separator;
+            StudentRecord += Student.Gender + Constants.Separator;
             StudentRecord += Student.Address;
             return StudentRecord;
 
@@ -65,6 +62,50 @@ namespace Student_Management_System.Services
 
         }
 
+        private string CreateID()
+        {
+
+            List<clsStudent> Students = GetAll();
+
+            if (Students.Count == 0)
+            {
+
+                return "STU001";
+            }
+            else
+            {
+                string LastStudent = Students[Students.Count - 1].ID;
+                int Number = Convert.ToInt32(LastStudent.Substring(3));
+
+                Number++;
+                if (Number <= 9)
+                    return "STU00" + Number;
+                else if (Number <= 99)
+                    return "STU0" + Number;
+                else
+                    return "STU" + Number;
+            }
+
+        }
+
+        private static bool IsValidStudent(clsStudent Student)
+        {
+            return !string.IsNullOrWhiteSpace(Student.FirstName)
+                && !string.IsNullOrWhiteSpace(Student.LastName)
+                && Student.Age > 0
+                && !string.IsNullOrWhiteSpace(Student.Phone)
+                && !string.IsNullOrWhiteSpace(Student.Gender)
+                && !string.IsNullOrWhiteSpace(Student.Address);
+        }
+
+        public static string[] GetStudent(clsStudent Student)
+        {
+
+            string[] dataLine = ConverStudentObjectToRecord(Student).Split(new string[] { Constants.Separator }, StringSplitOptions.None);
+            return dataLine;
+
+        }
+
         public List<clsStudent> GetAll()
         {
             List<clsStudent> Students = new List<clsStudent>();
@@ -81,7 +122,6 @@ namespace Student_Management_System.Services
                     {
 
                         Students.Add(ConvertRecordToStudentObject(record));
-
                     }
 
                 }
@@ -111,33 +151,47 @@ namespace Student_Management_System.Services
 
         }
 
-        public void Add(clsStudent record)
+        public  void Add(clsStudent record)
         {
-
-            using (StreamWriter reDatabase = new StreamWriter(Constants.StudentsFile, true))
+            if (IsValidStudent(record))
             {
+                record.ID = CreateID();
 
-                reDatabase.WriteLine(ConverStudentObjectToRecord(record));
+                using (StreamWriter reDatabase = new StreamWriter(Constants.StudentsFile, true))
+                {
+
+                    reDatabase.WriteLine(ConverStudentObjectToRecord(record));
+
+                }
 
             }
-
+          
         }
 
         public void Update(clsStudent record)
         {
 
-            List<clsStudent> Students = GetAll();
-
-            for (int item = 0; item < Students.Count; item++)
+            if (IsValidStudent(record)) 
             {
-                if (Students[item].ID == record.ID)
-                {
-                    Students[item] = record;
-                    break;
-                }
-            }
+                List<clsStudent> Students = GetAll();
 
-            ChangeDate(Students);
+                for (int item = 0; item < Students.Count; item++)
+                {
+                    if (Students[item].ID == record.ID)
+                    {
+                        Students[item] = record;
+                        break;
+                    }
+                }
+
+                ChangeDate(Students);
+                MessageBox.Show("Edited Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Fill in the voids", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
 
         }
 
@@ -157,6 +211,27 @@ namespace Student_Management_System.Services
             }
 
             ChangeDate(Students);
+        }
+
+        public bool IsExit(string Username)
+        {
+            List<clsStudent> Students = GetAll();
+
+            if (true)
+            {
+                foreach (clsStudent item in Students)
+                {
+
+                    if (item.ID == Username)
+                    {
+
+                        return true;
+
+                    }
+                }
+            }
+
+            return false;
         }
 
     }

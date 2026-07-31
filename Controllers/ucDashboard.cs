@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Student_Management_System.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,37 +23,37 @@ namespace Student_Management_System
 
             dgvStudent.Rows.Clear();
 
-            List<clsStudent> students = clsStudent.LoadStudents();
-            short Conu = 0;
+            StudentService studentService = new StudentService();
+
+            List<clsStudent> students = studentService.GetAll();
+            
 
             foreach (var item in students)
             {
-                dgvStudent.Rows.Add(clsStudent.StudentSearch(item));
-                Conu++;
+                dgvStudent.Rows.Add(StudentService.GetStudent(item));
             }
-            lblTotalStudents.Text = Conu.ToString();
+            lblTotalStudents.Text = students.Count.ToString();
 
         }
 
         private void ucDashboard_Load(object sender, EventArgs e)
         {
+            dgvStudent.Rows.Clear();
 
-            List<clsStudent> students = clsStudent.LoadStudents();
-            short Conu = 0;
+            StudentService studentService = new StudentService();
+
+            List<clsStudent> students = studentService.GetAll();
+
 
             foreach (var item in students)
             {
-                if (Conu == 5) 
+                if (dgvStudent.Rows.Count == 5)
                 {
                     break;
                 }
-                dgvStudent.Rows.Add(clsStudent.StudentSearch(item));
-                Conu++;
+                dgvStudent.Rows.Add(StudentService.GetStudent(item));
             }
-
-            lblTotalStudents.Text = Conu.ToString();
-
-
+            lblTotalStudents.Text = students.Count.ToString();
         }
     }
 
