@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlPassword = new System.Windows.Forms.Panel();
             this.pEyeIcon = new System.Windows.Forms.PictureBox();
             this.txtIDSearch = new System.Windows.Forms.TextBox();
@@ -43,18 +39,20 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTotalStudents = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.dgvStudents = new System.Windows.Forms.DataGridView();
-            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFristName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColAdress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColDateBirth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlPassword.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pEyeIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,7 +103,7 @@
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
-            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatAppearance.BorderSize = 12;
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnSearch.Location = new System.Drawing.Point(317, 55);
@@ -121,7 +119,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.Red;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(225, 439);
+            this.btnDelete.Location = new System.Drawing.Point(150, 489);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(107, 45);
             this.btnDelete.TabIndex = 29;
@@ -135,7 +133,7 @@
             this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
             this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.Location = new System.Drawing.Point(380, 439);
+            this.btnRefresh.Location = new System.Drawing.Point(288, 489);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(124, 45);
             this.btnRefresh.TabIndex = 30;
@@ -149,7 +147,7 @@
             this.btnEidt.BackColor = System.Drawing.Color.Green;
             this.btnEidt.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnEidt.ForeColor = System.Drawing.Color.White;
-            this.btnEidt.Location = new System.Drawing.Point(78, 439);
+            this.btnEidt.Location = new System.Drawing.Point(20, 489);
             this.btnEidt.Name = "btnEidt";
             this.btnEidt.Size = new System.Drawing.Size(107, 45);
             this.btnEidt.TabIndex = 28;
@@ -189,114 +187,95 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Total Students";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dgvStudents);
+            this.panel1.Location = new System.Drawing.Point(78, 161);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(565, 308);
+            this.panel1.TabIndex = 33;
+            // 
             // dgvStudents
             // 
             this.dgvStudents.AllowUserToAddRows = false;
-            this.dgvStudents.AllowUserToResizeRows = false;
+            this.dgvStudents.AllowUserToDeleteRows = false;
+            this.dgvStudents.AllowUserToResizeColumns = false;
+            this.dgvStudents.BackgroundColor = System.Drawing.Color.White;
             this.dgvStudents.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvStudents.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvStudents.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStudents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvStudents.ColumnHeadersHeight = 30;
+            this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColID,
-            this.ColFristName,
-            this.ColLastName,
-            this.ColAge,
-            this.ColPhone,
-            this.ColGender,
-            this.ColAdress});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStudents.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvStudents.EnableHeadersVisualStyles = false;
-            this.dgvStudents.Location = new System.Drawing.Point(78, 160);
+            this.Column1,
+            this.ColFirstName,
+            this.Column3,
+            this.ColDateBirth,
+            this.Column5,
+            this.Column6,
+            this.ColAddress});
+            this.dgvStudents.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgvStudents.Location = new System.Drawing.Point(3, 6);
             this.dgvStudents.Name = "dgvStudents";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStudents.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvStudents.RowHeadersVisible = false;
-            this.dgvStudents.RowTemplate.Height = 30;
-            this.dgvStudents.Size = new System.Drawing.Size(613, 273);
-            this.dgvStudents.TabIndex = 32;
+            this.dgvStudents.Size = new System.Drawing.Size(559, 302);
+            this.dgvStudents.TabIndex = 34;
             // 
-            // ColID
+            // Column1
             // 
-            this.ColID.Frozen = true;
-            this.ColID.HeaderText = "ID";
-            this.ColID.Name = "ColID";
-            this.ColID.ReadOnly = true;
-            this.ColID.Width = 60;
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 50;
             // 
-            // ColFristName
+            // ColFirstName
             // 
-            this.ColFristName.Frozen = true;
-            this.ColFristName.HeaderText = "FristName";
-            this.ColFristName.Name = "ColFristName";
+            this.ColFirstName.HeaderText = "FirstName";
+            this.ColFirstName.Name = "ColFirstName";
+            this.ColFirstName.ReadOnly = true;
+            this.ColFirstName.Width = 80;
             // 
-            // ColLastName
+            // Column3
             // 
-            this.ColLastName.Frozen = true;
-            this.ColLastName.HeaderText = "LastName";
-            this.ColLastName.Name = "ColLastName";
-            this.ColLastName.ReadOnly = true;
+            this.Column3.HeaderText = "LastName";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 80;
             // 
-            // ColAge
+            // ColDateBirth
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.ColAge.DefaultCellStyle = dataGridViewCellStyle6;
-            this.ColAge.Frozen = true;
-            this.ColAge.HeaderText = "Age";
-            this.ColAge.Name = "ColAge";
-            this.ColAge.Width = 50;
+            this.ColDateBirth.HeaderText = "DateBirth";
+            this.ColDateBirth.Name = "ColDateBirth";
+            this.ColDateBirth.ReadOnly = true;
+            this.ColDateBirth.Width = 80;
             // 
-            // ColPhone
+            // Column5
             // 
-            this.ColPhone.Frozen = true;
-            this.ColPhone.HeaderText = "Phone";
-            this.ColPhone.Name = "ColPhone";
-            this.ColPhone.Width = 120;
+            this.Column5.HeaderText = "Phone";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 80;
             // 
-            // ColGender
+            // Column6
             // 
-            this.ColGender.Frozen = true;
-            this.ColGender.HeaderText = "Gender";
-            this.ColGender.Name = "ColGender";
-            this.ColGender.Width = 80;
+            this.Column6.HeaderText = "Gender";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 50;
             // 
-            // ColAdress
+            // ColAddress
             // 
-            this.ColAdress.Frozen = true;
-            this.ColAdress.HeaderText = "Adress";
-            this.ColAdress.Name = "ColAdress";
+            this.ColAddress.HeaderText = "Address";
+            this.ColAddress.Name = "ColAddress";
+            this.ColAddress.ReadOnly = true;
+            this.ColAddress.Width = 80;
             // 
             // ucStudents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.dgvStudents);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEidt);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.pnlPassword);
             this.Name = "ucStudents";
@@ -308,6 +287,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
             this.ResumeLayout(false);
 
@@ -325,13 +305,14 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblTotalStudents;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvStudents;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColFristName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColLastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColAge;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColPhone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColGender;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColAdress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColFirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColDateBirth;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColAddress;
     }
 }

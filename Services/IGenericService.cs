@@ -10,13 +10,13 @@ namespace Student_Management_System.Repositories
     {
         List<T> GetAll();
 
-        T GetByUsername(string id);
+        T Find(string id);
 
-        void Add(T entity);
+        bool Add(T entity);
 
-        void Update(T entity);
+        bool Update(T entity);
 
-        void Delete(T entity);
+        bool Delete(string id);
     }
 
 }

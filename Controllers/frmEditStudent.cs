@@ -19,7 +19,7 @@ namespace Student_Management_System
 
             StudentService studentService = new StudentService();
 
-            StudentEdit = studentService.GetByUsername(StudentID);
+            StudentEdit = studentService.Find(StudentID);
 
         }
         private clsStudent StudentEdit;
@@ -39,7 +39,7 @@ namespace Student_Management_System
             lblIDStudent.Text = StudentEdit.ID;
             txtFirstName.Text = StudentEdit.FirstName;
             txtLastName.Text = StudentEdit.LastName;
-            txtAge.Text = StudentEdit.Age.ToString();
+            txtAge.Text = StudentEdit.BirthDate.ToString();
             txtPhone.Text = StudentEdit.Phone;
             cbGender.Text = StudentEdit.Gender;
             txtAddress.Text = StudentEdit.Address;
@@ -51,7 +51,7 @@ namespace Student_Management_System
 
             StudentEdit.FirstName = txtFirstName.Text;
             StudentEdit.LastName = txtLastName.Text;
-            StudentEdit.Age = Convert.ToInt32(txtAge.Text);
+            StudentEdit.BirthDate = Convert.ToDateTime(txtAge.Text);
             StudentEdit.Phone = txtPhone.Text;
             StudentEdit.Gender = cbGender.Text;
             StudentEdit.Address = txtAddress.Text;

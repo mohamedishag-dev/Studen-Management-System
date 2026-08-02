@@ -11,71 +11,17 @@ namespace Student_Management_System.Services
 {
     internal class StudentService : IGenericService<clsStudent>
     {
-
-        private static clsStudent ConvertRecordToStudentObject(string record)
-        {
-            string[] DataLine =
-                record.Split(new string[] { Constants.Separator },
-                StringSplitOptions.None);
-
-            return new clsStudent(
-                DataLine[0],
-                DataLine[1],
-                DataLine[2],
-                Convert.ToInt32(DataLine[3]),
-                DataLine[4],
-                DataLine[5],
-                DataLine[6]
-            );
-        }
-
-        private static string ConverStudentObjectToRecord(clsStudent Student)
-        {
-
-            string StudentRecord = "";
-            StudentRecord = Student.ID + Constants.Separator;
-            StudentRecord += Student.FirstName + Constants.Separator;
-            StudentRecord += Student.LastName + Constants.Separator;
-            StudentRecord += Student.Age.ToString() + Constants.Separator;
-            StudentRecord += Student.Phone + Constants.Separator;
-            StudentRecord += Student.Gender + Constants.Separator;
-            StudentRecord += Student.Address;
-            return StudentRecord;
-
-        }
-
-        private static void ChangeDate(List<clsStudent> Users)
-        {
-
-            System.IO.File.WriteAllText(Constants.StudentsFile, "");
-
-            foreach (clsStudent User in Users)
-            {
-
-                using (StreamWriter reDatabase = new StreamWriter(Constants.StudentsFile, true))
-                {
-
-                    reDatabase.WriteLine(ConverStudentObjectToRecord(User));
-
-                }
-            }
-
-        }
-
         private string CreateID()
         {
-
             List<clsStudent> Students = GetAll();
 
             if (Students.Count == 0)
-            {
-
                 return "STU001";
-            }
+
             else
             {
-                string LastStudent = Students[Students.Count - 1].ID;
-                int Number = Convert.ToInt32(LastStudent.Substring(3));
+                //                int Number = Convert.ToInt32(Students[Students.Count - 1].ID.Substring(3));
+                int Number = 1;
 
                 Number++;
                 if (Number <= 9)
@@ -88,150 +34,97 @@ namespace Student_Management_System.Services
 
         }
 
-        private static bool IsValidStudent(clsStudent Student)
+        private static bool IsValid(clsStudent Student)
         {
             return !string.IsNullOrWhiteSpace(Student.FirstName)
                 && !string.IsNullOrWhiteSpace(Student.LastName)
-                && Student.Age > 0
+                && Student.BirthDate != DateTime.MinValue
                 && !string.IsNullOrWhiteSpace(Student.Phone)
                 && !string.IsNullOrWhiteSpace(Student.Gender)
                 && !string.IsNullOrWhiteSpace(Student.Address);
         }
 
-        public static string[] GetStudent(clsStudent Student)
-        {
-
-            string[] dataLine = ConverStudentObjectToRecord(Student).Split(new string[] { Constants.Separator }, StringSplitOptions.None);
-            return dataLine;
-
-        }
+        StudentRepository repository = new StudentRepository();
 
         public List<clsStudent> GetAll()
         {
-            List<clsStudent> Students = new List<clsStudent>();
+            
+            return repository.GetAll();
 
-            using (StreamReader reDatabase = new StreamReader(Constants.StudentsFile))
-            {
-                string record;
-
-                do
-                {
-                    record = reDatabase.ReadLine();
-
-                    if (record != null)
-                    {
-
-                        Students.Add(ConvertRecordToStudentObject(record));
-                    }
-
-                }
-                while (record != null);
-
-            }
-
-            return Students;
         }
 
-        public clsStudent GetByUsername(string Username)
+        public clsStudent Find(string username)
         {
             List<clsStudent> Students = GetAll();
 
             foreach (clsStudent item in Students)
             {
-
-                if (item.ID == Username)
+                if (item.ID == username)
                 {
-
                     return item;
-
                 }
             }
-
             return new clsStudent();
-
         }
 
-        public  void Add(clsStudent record)
+        public bool Add(clsStudent studnet)
         {
-            if (IsValidStudent(record))
+            
+            if (repository.Exists(studnet.ID))
+                return false;
+
+            if (IsValid(studnet))
             {
-                record.ID = CreateID();
+                if (string.IsNullOrWhiteSpace(studnet.ID))
+                    studnet.ID = CreateID();
 
-                using (StreamWriter reDatabase = new StreamWriter(Constants.StudentsFile, true))
-                {
-
-                    reDatabase.WriteLine(ConverStudentObjectToRecord(record));
-
-                }
+                repository.Add(studnet);
+                return true;
 
             }
-          
-        }
-
-        public void Update(clsStudent record)
-        {
-
-            if (IsValidStudent(record)) 
-            {
-                List<clsStudent> Students = GetAll();
-
-                for (int item = 0; item < Students.Count; item++)
-                {
-                    if (Students[item].ID == record.ID)
-                    {
-                        Students[item] = record;
-                        break;
-                    }
-                }
-
-                ChangeDate(Students);
-                MessageBox.Show("Edited Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Fill in the voids", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-
-        }
-
-        public void Delete(clsStudent record)
-        {
-            List<clsStudent> Students = GetAll();
-
-            foreach (clsStudent User in Students)
-            {
-
-                if (User.ID == record.ID)
-                {
-                    Students.Remove(User);
-                    break;
-                }
-
-            }
-
-            ChangeDate(Students);
-        }
-
-        public bool IsExit(string Username)
-        {
-            List<clsStudent> Students = GetAll();
-
-            if (true)
-            {
-                foreach (clsStudent item in Students)
-                {
-
-                    if (item.ID == Username)
-                    {
-
-                        return true;
-
-                    }
-                }
-            }
-
             return false;
+        }
+
+        public bool Update(clsStudent studnet)
+        {
+            if (!repository.Exists(studnet.ID))
+                return false;
+
+            repository.Update(studnet);
+            return true;
+
+        }
+
+        public bool Delete(string id)
+        {
+            if (!repository.Exists(id))
+                return false;
+
+            repository.Delete(id);
+            return true;
+        }
+
+        public string[] StudentSearch(clsStudent Student)
+        {
+           
+            string[] dataLine = ConverStudentObjectToLine(Student).Split(new string[] { "#//#" }, StringSplitOptions.None);
+            return dataLine;
+
+        }
+
+        private static string ConverStudentObjectToLine(clsStudent student)
+        {
+
+            string record = "";
+            record = student.ID + Constants.Separator;
+            record += student.FirstName + Constants.Separator;
+            record += student.LastName + Constants.Separator;
+            record += student.BirthDate.ToString("dd/MM/yyyy") + Constants.Separator;
+            record += student.Phone + Constants.Separator;
+            record += student.Gender + Constants.Separator;
+            record += student.Address;
+            return record;
+
         }
 
     }

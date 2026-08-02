@@ -27,7 +27,7 @@ namespace Student_Management_System
             clsStudent Student = new clsStudent();
             Student.FirstName = txtFirstName.Text;
             Student.LastName = txtLastName.Text;
-            Student.Age = Convert.ToInt32(txtAge.Text);
+            Student.BirthDate = Convert.ToDateTime(txtAge.Text);
             Student.Phone = txtPhone.Text;
             Student.Gender = cbGender.Text;
             Student.Address = txtAddress.Text;
@@ -36,7 +36,7 @@ namespace Student_Management_System
 
             studentService.Add(Student);
 
-            if (studentService.IsExit(Student.ID)) 
+            //if (studentService.IsExit(Student.ID)) 
             {
                 MessageBox.Show("Adding Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtFirstName.Text = "";
@@ -45,7 +45,7 @@ namespace Student_Management_System
                 txtPhone.Text = "";
                 txtAddress.Text = "";
             }
-            else
+        //    else
             {
                 MessageBox.Show("Fill in the voids", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -53,6 +53,11 @@ namespace Student_Management_System
 
         }
 
-     
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            txtAge.Text = dtpBirthDate.Value.ToString();
+        }
+
+    
     }
 }

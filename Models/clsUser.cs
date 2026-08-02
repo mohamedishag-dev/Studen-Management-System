@@ -8,7 +8,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Student_Management_System
 {
-    internal class clsUser
+    public class clsUser
     {
         public string FullName { get; set; } = string.Empty;
         public string Username { get; set; } = string.Empty;

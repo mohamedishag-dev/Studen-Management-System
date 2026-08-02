@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="Controllers\StudentUI.cs" />
     <Compile Include="Models\clsStudent.cs" />
     <Compile Include="Models\clsUser.cs" />
     <Compile Include="Controllers\frmEditStudent.cs">
@@ -92,12 +93,6 @@
     <Compile Include="Controllers\ucDashboard.Designer.cs">
       <DependentUpon>ucDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\ucEditStudent.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controllers\ucEditStudent.Designer.cs">
-      <DependentUpon>ucEditStudent.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\ucStudents.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -111,6 +106,8 @@
       <DependentUpon>ucUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Repositories\IGenericRepository.cs" />
+    <Compile Include="Repositories\StudentRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Services\IGenericService.cs" />
     <Compile Include="Services\StudentService.cs" />
     <Compile Include="Services\UserService.cs" />
@@ -136,9 +133,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controllers\ucDashboard.resx">
       <DependentUpon>ucDashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controllers\ucEditStudent.resx">
-      <DependentUpon>ucEditStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controllers\ucStudents.resx">
       <DependentUpon>ucStudents.cs</DependentUpon>
