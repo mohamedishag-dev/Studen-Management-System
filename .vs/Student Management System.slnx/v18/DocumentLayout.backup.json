@@ -3,36 +3,12 @@
   "WorkspaceRootPath": "E:\\Profects\\Studen-Management-System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|e:\\profects\\studen-management-system\\controllers\\ucdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|solutionrelative:controllers\\ucdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|E:\\Profects\\Studen-Management-System\\controllers\\studentui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|solutionrelative:controllers\\studentui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|e:\\profects\\studen-management-system\\models\\clsstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|solutionrelative:models\\clsstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|E:\\Profects\\Studen-Management-System\\controllers\\ucdashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|solutionrelative:controllers\\ucdashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|E:\\Profects\\Studen-Management-System\\controllers\\ucdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|solutionrelative:controllers\\ucdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|E:\\Profects\\Studen-Management-System\\services\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|solutionrelative:services\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|E:\\Profects\\Studen-Management-System\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|E:\\Profects\\Studen-Management-System\\repositories\\studentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|solutionrelative:repositories\\studentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|e:\\profects\\studen-management-system\\forms\\ucdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|solutionrelative:forms\\ucdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,123 +38,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ucDashboard.Designer.cs",
-              "DocumentMoniker": "E:\\Profects\\Studen-Management-System\\Controllers\\ucDashboard.Designer.cs",
-              "RelativeDocumentMoniker": "Controllers\\ucDashboard.Designer.cs",
-              "ToolTip": "E:\\Profects\\Studen-Management-System\\Controllers\\ucDashboard.Designer.cs*",
-              "RelativeToolTip": "Controllers\\ucDashboard.Designer.cs*",
-              "ViewState": "AgIAABkBAAAAAAAAAAAEwBkBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-02T21:48:56.946Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "StudentUI.cs",
-              "DocumentMoniker": "E:\\Profects\\Studen-Management-System\\Controllers\\StudentUI.cs",
-              "RelativeDocumentMoniker": "Controllers\\StudentUI.cs",
-              "ToolTip": "E:\\Profects\\Studen-Management-System\\Controllers\\StudentUI.cs",
-              "RelativeToolTip": "Controllers\\StudentUI.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-02T21:40:20.217Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ucDashboard.cs",
-              "DocumentMoniker": "E:\\Profects\\Studen-Management-System\\Controllers\\ucDashboard.cs",
-              "RelativeDocumentMoniker": "Controllers\\ucDashboard.cs",
-              "ToolTip": "E:\\Profects\\Studen-Management-System\\Controllers\\ucDashboard.cs*",
-              "RelativeToolTip": "Controllers\\ucDashboard.cs*",
-              "ViewState": "AgIAADkAAAAAAAAAAAAvwEUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-02T21:20:25.07Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "ucDashboard.cs [Design]",
-              "DocumentMoniker": "E:\\Profects\\Studen-Management-System\\Controllers\\ucDashboard.cs",
-              "RelativeDocumentMoniker": "Controllers\\ucDashboard.cs",
-              "ToolTip": "E:\\Profects\\Studen-Management-System\\Controllers\\ucDashboard.cs [Design]*",
-              "RelativeToolTip": "Controllers\\ucDashboard.cs [Design]*",
+              "DocumentMoniker": "E:\\Profects\\Studen-Management-System\\Forms\\ucDashboard.cs",
+              "RelativeDocumentMoniker": "Forms\\ucDashboard.cs",
+              "ToolTip": "E:\\Profects\\Studen-Management-System\\Forms\\ucDashboard.cs [Design]*",
+              "RelativeToolTip": "Forms\\ucDashboard.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-02T21:20:22.574Z",
+              "WhenOpened": "2026-08-03T21:23:27.633Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "StudentRepository.cs",
-              "DocumentMoniker": "E:\\Profects\\Studen-Management-System\\Repositories\\StudentRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\StudentRepository.cs",
-              "ToolTip": "E:\\Profects\\Studen-Management-System\\Repositories\\StudentRepository.cs",
-              "RelativeToolTip": "Repositories\\StudentRepository.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwCMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-02T20:45:49.227Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\Profects\\Studen-Management-System\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "E:\\Profects\\Studen-Management-System\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAuwBoAAAA/AAAAAAAAAA==",
+              "ToolTip": "E:\\Profects\\Studen-Management-System\\Program.cs*",
+              "RelativeToolTip": "Program.cs*",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAowBYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-02T20:41:34.034Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "StudentService.cs",
-              "DocumentMoniker": "E:\\Profects\\Studen-Management-System\\Services\\StudentService.cs",
-              "RelativeDocumentMoniker": "Services\\StudentService.cs",
-              "ToolTip": "E:\\Profects\\Studen-Management-System\\Services\\StudentService.cs",
-              "RelativeToolTip": "Services\\StudentService.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAkwIAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-02T18:16:16.883Z"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "fac8e750-0d17-45f3-831b-3d290a4c7227",
-        "Display": 1,
-        "X": -5,
-        "Y": 79,
-        "Width": 1034,
-        "Height": 646,
-        "WindowState": 2
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "clsStudent.cs",
-              "DocumentMoniker": "E:\\Profects\\Studen-Management-System\\Models\\clsStudent.cs",
-              "RelativeDocumentMoniker": "Models\\clsStudent.cs",
-              "ToolTip": "E:\\Profects\\Studen-Management-System\\Models\\clsStudent.cs",
-              "RelativeToolTip": "Models\\clsStudent.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-02T19:12:53.566Z",
+              "WhenOpened": "2026-08-02T20:41:34.034Z",
               "EditorCaption": ""
             }
           ]

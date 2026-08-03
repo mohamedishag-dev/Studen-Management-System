@@ -20,8 +20,8 @@ namespace Student_Management_System.Services
 
             else
             {
-                //                int Number = Convert.ToInt32(Students[Students.Count - 1].ID.Substring(3));
-                int Number = 1;
+                
+                int Number = Convert.ToInt32(Students[Students.Count - 1].ID.Substring(3));
 
                 Number++;
                 if (Number <= 9)
@@ -36,9 +36,11 @@ namespace Student_Management_System.Services
 
         private static bool IsValid(clsStudent Student)
         {
+            
             return !string.IsNullOrWhiteSpace(Student.FirstName)
                 && !string.IsNullOrWhiteSpace(Student.LastName)
                 && Student.BirthDate != DateTime.MinValue
+                && Student.BirthDate > DateTime.Now.AddYears(-120)
                 && !string.IsNullOrWhiteSpace(Student.Phone)
                 && !string.IsNullOrWhiteSpace(Student.Gender)
                 && !string.IsNullOrWhiteSpace(Student.Address);
@@ -90,8 +92,15 @@ namespace Student_Management_System.Services
             if (!repository.Exists(studnet.ID))
                 return false;
 
-            repository.Update(studnet);
-            return true;
+            if (IsValid(studnet))
+            {
+               
+                repository.Update(studnet);
+                return true;
+
+            }
+
+            return false;
 
         }
 
@@ -104,28 +113,12 @@ namespace Student_Management_System.Services
             return true;
         }
 
-        public string[] StudentSearch(clsStudent Student)
+        public bool Exists(string id)
         {
-           
-            string[] dataLine = ConverStudentObjectToLine(Student).Split(new string[] { "#//#" }, StringSplitOptions.None);
-            return dataLine;
+            if (repository.Exists(id))
+                return true;
 
+            return false;
         }
-
-        private static string ConverStudentObjectToLine(clsStudent student)
-        {
-
-            string record = "";
-            record = student.ID + Constants.Separator;
-            record += student.FirstName + Constants.Separator;
-            record += student.LastName + Constants.Separator;
-            record += student.BirthDate.ToString("dd/MM/yyyy") + Constants.Separator;
-            record += student.Phone + Constants.Separator;
-            record += student.Gender + Constants.Separator;
-            record += student.Address;
-            return record;
-
-        }
-
     }
 }

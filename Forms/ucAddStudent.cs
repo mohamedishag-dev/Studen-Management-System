@@ -27,37 +27,28 @@ namespace Student_Management_System
             clsStudent Student = new clsStudent();
             Student.FirstName = txtFirstName.Text;
             Student.LastName = txtLastName.Text;
-            Student.BirthDate = Convert.ToDateTime(txtAge.Text);
+            Student.BirthDate = dtpBirthDate.Value;
             Student.Phone = txtPhone.Text;
             Student.Gender = cbGender.Text;
             Student.Address = txtAddress.Text;
 
-            StudentService studentService = new StudentService();
+            StudentService service = new StudentService();
 
-            studentService.Add(Student);
-
-            //if (studentService.IsExit(Student.ID)) 
+            if (service.Add(Student)) 
             {
-                MessageBox.Show("Adding Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Adding Successfully", "Success",MessageBoxButtons.OK, 
+                    MessageBoxIcon.Information);
                 txtFirstName.Text = "";
                 txtLastName.Text = "";
-                txtAge.Text = "";
-                txtPhone.Text = "";
                 txtAddress.Text = "";
+                txtPhone.Text = "";
+
             }
-        //    else
+            else
             {
                 MessageBox.Show("Fill in the voids", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
-
         }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            txtAge.Text = dtpBirthDate.Value.ToString();
-        }
-
     
     }
 }

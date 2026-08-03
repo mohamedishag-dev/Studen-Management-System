@@ -26,21 +26,20 @@ namespace Student_Management_System.Repositories
                 data[0],
                 data[1],
                 data[2],
-                Convert.ToDateTime(data[3]),
-               // DateTime.Parse(data[3]),
+                 DateTime.Parse(data[3]),
                 data[4],
                 data[5],
                 data[6]
             );
         }
-        private static string ConverStudentObjectToLine(clsStudent student)
+        private static string ConverStudentObjectToRecord(clsStudent student)
         {
 
             string record = "";
             record = student.ID + Constants.Separator;
             record += student.FirstName + Constants.Separator;
             record += student.LastName + Constants.Separator;
-            record += student.BirthDate.ToString("dd/MM/yyyy") + Constants.Separator;
+            record += student.BirthDate.ToString("MM/dd/yyyy") + Constants.Separator;
             record += student.Phone + Constants.Separator;
             record += student.Gender + Constants.Separator;
             record += student.Address;
@@ -56,7 +55,7 @@ namespace Student_Management_System.Repositories
             {
                 foreach (var item in Students)
                 {
-                    reDatabase.WriteLine(ConverStudentObjectToLine(item));
+                    reDatabase.WriteLine(ConverStudentObjectToRecord(item));
                 }
             }
 
@@ -104,7 +103,7 @@ namespace Student_Management_System.Repositories
 
             using (StreamWriter reDatabase = new StreamWriter(Constants.StudentsFile, true))
             {
-                reDatabase.WriteLine(ConverStudentObjectToLine(student));
+                reDatabase.WriteLine(ConverStudentObjectToRecord(student));
             }
 
         }

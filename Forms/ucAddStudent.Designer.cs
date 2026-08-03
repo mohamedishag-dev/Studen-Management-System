@@ -44,13 +44,12 @@
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
+            this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.txtAge = new System.Windows.Forms.TextBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
-            this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -164,6 +163,20 @@
             panel4.Size = new System.Drawing.Size(280, 38);
             panel4.TabIndex = 2;
             // 
+            // dtpBirthDate
+            // 
+            this.dtpBirthDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.dtpBirthDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtpBirthDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.dtpBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBirthDate.Location = new System.Drawing.Point(30, -1);
+            this.dtpBirthDate.MaxDate = new System.DateTime(2099, 1, 1, 0, 0, 0, 0);
+            this.dtpBirthDate.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dtpBirthDate.Name = "dtpBirthDate";
+            this.dtpBirthDate.Size = new System.Drawing.Size(249, 38);
+            this.dtpBirthDate.TabIndex = 3;
+            this.dtpBirthDate.Value = new System.DateTime(2026, 1, 1, 0, 0, 0, 0);
+            // 
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
@@ -174,18 +187,6 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 16;
             this.pictureBox4.TabStop = false;
-            // 
-            // txtAge
-            // 
-            this.txtAge.BackColor = System.Drawing.Color.White;
-            this.txtAge.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtAge.Location = new System.Drawing.Point(364, 487);
-            this.txtAge.MaxLength = 15;
-            this.txtAge.Name = "txtAge";
-            this.txtAge.Size = new System.Drawing.Size(231, 17);
-            this.txtAge.TabIndex = 0;
             // 
             // panel5
             // 
@@ -309,25 +310,9 @@
             label9.TabIndex = 26;
             label9.Text = "BirthDate";
             // 
-            // dtpBirthDate
-            // 
-            this.dtpBirthDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.dtpBirthDate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtpBirthDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.dtpBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBirthDate.Location = new System.Drawing.Point(30, -1);
-            this.dtpBirthDate.MaxDate = new System.DateTime(2099, 1, 1, 0, 0, 0, 0);
-            this.dtpBirthDate.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.dtpBirthDate.Name = "dtpBirthDate";
-            this.dtpBirthDate.Size = new System.Drawing.Size(249, 38);
-            this.dtpBirthDate.TabIndex = 3;
-            this.dtpBirthDate.Value = new System.DateTime(2026, 1, 1, 0, 0, 0, 0);
-            this.dtpBirthDate.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.txtAge);
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.cbGender);
@@ -454,7 +439,6 @@
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -468,7 +452,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.TextBox txtAge;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.PictureBox pictureBox6;

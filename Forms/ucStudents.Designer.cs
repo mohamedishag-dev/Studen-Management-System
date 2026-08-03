@@ -40,20 +40,20 @@
             this.lblTotalStudents = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvStudents = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColDateBirth = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColDateBirth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvStudent = new System.Windows.Forms.DataGridView();
             this.pnlPassword.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pEyeIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlPassword
@@ -119,7 +119,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.Red;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(150, 489);
+            this.btnDelete.Location = new System.Drawing.Point(208, 488);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(107, 45);
             this.btnDelete.TabIndex = 29;
@@ -133,7 +133,7 @@
             this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
             this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.Location = new System.Drawing.Point(288, 489);
+            this.btnRefresh.Location = new System.Drawing.Point(346, 488);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(124, 45);
             this.btnRefresh.TabIndex = 30;
@@ -147,7 +147,7 @@
             this.btnEidt.BackColor = System.Drawing.Color.Green;
             this.btnEidt.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnEidt.ForeColor = System.Drawing.Color.White;
-            this.btnEidt.Location = new System.Drawing.Point(20, 489);
+            this.btnEidt.Location = new System.Drawing.Point(78, 488);
             this.btnEidt.Name = "btnEidt";
             this.btnEidt.Size = new System.Drawing.Size(107, 45);
             this.btnEidt.TabIndex = 28;
@@ -189,82 +189,76 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dgvStudents);
+            this.panel1.Controls.Add(this.dgvStudent);
             this.panel1.Location = new System.Drawing.Point(78, 161);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(565, 308);
             this.panel1.TabIndex = 33;
-            // 
-            // dgvStudents
-            // 
-            this.dgvStudents.AllowUserToAddRows = false;
-            this.dgvStudents.AllowUserToDeleteRows = false;
-            this.dgvStudents.AllowUserToResizeColumns = false;
-            this.dgvStudents.BackgroundColor = System.Drawing.Color.White;
-            this.dgvStudents.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.ColFirstName,
-            this.Column3,
-            this.ColDateBirth,
-            this.Column5,
-            this.Column6,
-            this.ColAddress});
-            this.dgvStudents.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgvStudents.Location = new System.Drawing.Point(3, 6);
-            this.dgvStudents.Name = "dgvStudents";
-            this.dgvStudents.Size = new System.Drawing.Size(559, 302);
-            this.dgvStudents.TabIndex = 34;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 50;
-            // 
-            // ColFirstName
-            // 
-            this.ColFirstName.HeaderText = "FirstName";
-            this.ColFirstName.Name = "ColFirstName";
-            this.ColFirstName.ReadOnly = true;
-            this.ColFirstName.Width = 80;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "LastName";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 80;
-            // 
-            // ColDateBirth
-            // 
-            this.ColDateBirth.HeaderText = "DateBirth";
-            this.ColDateBirth.Name = "ColDateBirth";
-            this.ColDateBirth.ReadOnly = true;
-            this.ColDateBirth.Width = 80;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Phone";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 80;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Gender";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 50;
             // 
             // ColAddress
             // 
             this.ColAddress.HeaderText = "Address";
             this.ColAddress.Name = "ColAddress";
             this.ColAddress.ReadOnly = true;
-            this.ColAddress.Width = 80;
+            // 
+            // ColGender
+            // 
+            this.ColGender.HeaderText = "Gender";
+            this.ColGender.Name = "ColGender";
+            this.ColGender.ReadOnly = true;
+            // 
+            // ColPhone
+            // 
+            this.ColPhone.HeaderText = "Phone";
+            this.ColPhone.Name = "ColPhone";
+            this.ColPhone.ReadOnly = true;
+            // 
+            // ColDateBirth
+            // 
+            this.ColDateBirth.HeaderText = "DateBirth";
+            this.ColDateBirth.Name = "ColDateBirth";
+            this.ColDateBirth.ReadOnly = true;
+            // 
+            // ColLastName
+            // 
+            this.ColLastName.HeaderText = "LastName";
+            this.ColLastName.Name = "ColLastName";
+            this.ColLastName.ReadOnly = true;
+            // 
+            // ColFirstName
+            // 
+            this.ColFirstName.HeaderText = "FirstName";
+            this.ColFirstName.Name = "ColFirstName";
+            this.ColFirstName.ReadOnly = true;
+            // 
+            // ColId
+            // 
+            this.ColId.HeaderText = "ID";
+            this.ColId.Name = "ColId";
+            this.ColId.ReadOnly = true;
+            // 
+            // dgvStudent
+            // 
+            this.dgvStudent.AllowUserToAddRows = false;
+            this.dgvStudent.AllowUserToDeleteRows = false;
+            this.dgvStudent.AllowUserToResizeColumns = false;
+            this.dgvStudent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvStudent.BackgroundColor = System.Drawing.Color.White;
+            this.dgvStudent.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColId,
+            this.ColFirstName,
+            this.ColLastName,
+            this.ColDateBirth,
+            this.ColPhone,
+            this.ColGender,
+            this.ColAddress});
+            this.dgvStudent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgvStudent.Location = new System.Drawing.Point(3, 6);
+            this.dgvStudent.Name = "dgvStudent";
+            this.dgvStudent.Size = new System.Drawing.Size(559, 302);
+            this.dgvStudent.TabIndex = 34;
             // 
             // ucStudents
             // 
@@ -280,7 +274,6 @@
             this.Controls.Add(this.pnlPassword);
             this.Name = "ucStudents";
             this.Size = new System.Drawing.Size(744, 561);
-            this.Load += new System.EventHandler(this.ucStudents_Load);
             this.pnlPassword.ResumeLayout(false);
             this.pnlPassword.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pEyeIcon)).EndInit();
@@ -288,7 +281,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -306,13 +299,13 @@
         private System.Windows.Forms.Label lblTotalStudents;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dgvStudents;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridView dgvStudent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColFirstName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColLastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColDateBirth;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColPhone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColGender;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColAddress;
     }
 }
