@@ -36,3 +36,23 @@ E:\Profects\Studen-Management-System\obj\Debug\Student Management System.pdb
 E:\Profects\Studen-Management-System\bin\Debug\dje-NE\Student Management System.resources.dll
 E:\Profects\Studen-Management-System\obj\Debug\Student_Management_System.frmLogin.dje-NE.resources
 E:\Profects\Studen-Management-System\obj\Debug\dje-NE\Student Management System.resources.dll
+E:\Studen-Management-System\bin\Debug\Student Management System.exe.config
+E:\Studen-Management-System\bin\Debug\Student Management System.exe
+E:\Studen-Management-System\bin\Debug\Student Management System.pdb
+E:\Studen-Management-System\bin\Debug\dje-NE\Student Management System.resources.dll
+E:\Studen-Management-System\obj\Debug\Student Management System.csproj.AssemblyReference.cache
+E:\Studen-Management-System\obj\Debug\Student_Management_System.frmEditStudent.resources
+E:\Studen-Management-System\obj\Debug\Student_Management_System.frmDashboard.resources
+E:\Studen-Management-System\obj\Debug\Student_Management_System.frmLogin.resources
+E:\Studen-Management-System\obj\Debug\Student_Management_System.frmMessage.resources
+E:\Studen-Management-System\obj\Debug\Student_Management_System.Properties.Resources.resources
+E:\Studen-Management-System\obj\Debug\Student_Management_System.ucAddStudent.resources
+E:\Studen-Management-System\obj\Debug\Student_Management_System.ucDashboard.resources
+E:\Studen-Management-System\obj\Debug\Student_Management_System.ucStudents.resources
+E:\Studen-Management-System\obj\Debug\Student_Management_System.ucUsers.resources
+E:\Studen-Management-System\obj\Debug\Student_Management_System.frmLogin.dje-NE.resources
+E:\Studen-Management-System\obj\Debug\Student Management System.csproj.GenerateResource.cache
+E:\Studen-Management-System\obj\Debug\Student Management System.csproj.CoreCompileInputs.cache
+E:\Studen-Management-System\obj\Debug\dje-NE\Student Management System.resources.dll
+E:\Studen-Management-System\obj\Debug\Student Management System.exe
+E:\Studen-Management-System\obj\Debug\Student Management System.pdb
