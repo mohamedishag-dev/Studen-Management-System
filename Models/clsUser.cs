@@ -10,27 +10,20 @@ namespace Student_Management_System
 {
     public class clsUser
     {
-        public string FullName { get; set; } = string.Empty;
+        public int ID { get; set; }
         public string Username { get; set; } = string.Empty;
         public string PasswordHash { get; set; } = string.Empty;
-        public string Role { get; set; } = "User";
+        public string Role { get; set; } = string.Empty;
         public bool IsActive { get; set; } = true;
-        public clsUser(string fullName, string username, string password, string role, bool isActive)
+        public clsUser(int id, string username, string password, string role, bool isActive)
         {
-            FullName = fullName;
+            ID = id;
             Username = username;
             PasswordHash = password;
             Role = role;
             IsActive = isActive;
         }
-        public clsUser()
-        {
-            FullName = null;
-            Username = null;
-            PasswordHash = null;
-            Role = null;
-            IsActive = false;
-        }
+      
 
     }
 }

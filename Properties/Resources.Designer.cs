@@ -83,6 +83,16 @@ namespace Student_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap background {
+            get {
+                object obj = ResourceManager.GetObject("background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap calendar_ltr {
             get {
                 object obj = ResourceManager.GetObject("calendar_ltr", resourceCulture);
@@ -203,9 +213,39 @@ namespace Student_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ic_fluent_lock_closed_24_filled {
+            get {
+                object obj = ResourceManager.GetObject("ic_fluent_lock_closed_24_filled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_fluent_people_settings_24_filled {
+            get {
+                object obj = ResourceManager.GetObject("ic_fluent_people_settings_24_filled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ic_fluent_person_24_filled {
             get {
                 object obj = ResourceManager.GetObject("ic_fluent_person_24_filled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_fluent_shield_24_filled {
+            get {
+                object obj = ResourceManager.GetObject("ic_fluent_shield_24_filled", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

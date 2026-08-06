@@ -33,3 +33,6 @@ E:\Profects\Studen-Management-System\obj\Debug\Student Management System.csproj.
 E:\Profects\Studen-Management-System\obj\Debug\Student Management System.csproj.CoreCompileInputs.cache
 E:\Profects\Studen-Management-System\obj\Debug\Student Management System.exe
 E:\Profects\Studen-Management-System\obj\Debug\Student Management System.pdb
+E:\Profects\Studen-Management-System\bin\Debug\dje-NE\Student Management System.resources.dll
+E:\Profects\Studen-Management-System\obj\Debug\Student_Management_System.frmLogin.dje-NE.resources
+E:\Profects\Studen-Management-System\obj\Debug\dje-NE\Student Management System.resources.dll

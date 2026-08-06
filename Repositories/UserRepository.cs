@@ -12,30 +12,27 @@ namespace Student_Management_System.Repositories
     {
         private static clsUser ConvertRecordToUserObject(string record)
         {
-            string[] DataRecord =
+            string[] Record =
                 record.Split(new string[] { Constants.Separator },
                 StringSplitOptions.None);
 
-            clsUser user = new clsUser();
-            user.FullName = DataRecord[0];
-            user.Username = DataRecord[1];
-            user.PasswordHash = DataRecord[2];
-            user.Role = DataRecord[3];
-            user.IsActive = Convert.ToBoolean(DataRecord[4]);
-
-            return user;
+            return new clsUser(Convert.ToInt32(Record[0]),
+                Record[1],
+                Record[2],
+                Record[3],
+                Convert.ToBoolean(Record[4]));
 
         }
-        private static string ConverUserObjectToLine(clsUser User)
+        private static string ConverUserObjectToLine(clsUser user)
         {
 
-            string UserRecord = "";
-            UserRecord = User.FullName + Constants.Separator;
-            UserRecord += User.Username + Constants.Separator;
-            UserRecord += User.PasswordHash + Constants.Separator;
-            UserRecord += User.Role + Constants.Separator;
-            UserRecord += User.IsActive;
-            return UserRecord;
+            string record = "";
+            record = user.ID + Constants.Separator;
+            record += user.Username + Constants.Separator;
+            record += user.PasswordHash + Constants.Separator;
+            record += user.Role + Constants.Separator;
+            record += user.IsActive;
+            return record;
 
         }
         private static void SaveUsres(List<clsUser> Users)
@@ -98,7 +95,7 @@ namespace Student_Management_System.Repositories
                 }
             }
 
-            return new clsUser();
+            return null;
         }
 
         public void Add(clsUser user)

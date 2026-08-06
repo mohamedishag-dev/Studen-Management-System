@@ -66,7 +66,7 @@ namespace Student_Management_System.Services
                     return item;
                 }
             }
-            return new clsStudent();
+            return null;
         }
 
         public bool Add(clsStudent studnet)

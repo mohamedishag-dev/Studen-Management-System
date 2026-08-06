@@ -13,6 +13,12 @@ namespace Student_Management_System.Repositories
     {
         UserRepository repository = new UserRepository();
 
+        private int CreateID()
+        {
+            List<clsUser> users = GetAll();
+            return users.Count + 1;
+        }
+
         public List<clsUser> GetAll()
         {
 
@@ -27,12 +33,14 @@ namespace Student_Management_System.Repositories
 
         }
 
-        public bool Add(clsUser student)
+        public bool Add(clsUser user)
         {
-            if (repository.Exists(student.Username))
+            if (repository.Exists(user.Username))
                 return false;
 
-            repository.Add(student);
+            user.ID = CreateID();
+
+            repository.Add(user);
             return true;
         }
 
@@ -50,6 +58,9 @@ namespace Student_Management_System.Repositories
         public bool Delete(string username)
         {
 
+            if (username == "Admin")
+                return false;
+            
             if (!repository.Exists(username))
                 return false;
 
@@ -58,7 +69,14 @@ namespace Student_Management_System.Repositories
 
         }
 
+        public bool Exists(string username)
+        {
+            if (repository.Exists(username))
+                return true;
+
+            return false;
+        }
 
     }
-  
+
 }

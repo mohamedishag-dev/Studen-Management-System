@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "E:\\Profects\\Studen-Management-System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|E:\\Profects\\Studen-Management-System\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|E:\\Profects\\Studen-Management-System\\forms\\ucdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|solutionrelative:forms\\ucdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|e:\\profects\\studen-management-system\\forms\\ucdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|solutionrelative:forms\\ucdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|e:\\profects\\studen-management-system\\forms\\ucstudents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|solutionrelative:forms\\ucstudents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|E:\\Profects\\Studen-Management-System\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48171FDB-6173-4203-903B-4DFB6A6BBFDC}|Student Management System.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,27 +43,38 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ucDashboard.cs [Design]",
-              "DocumentMoniker": "E:\\Profects\\Studen-Management-System\\Forms\\ucDashboard.cs",
-              "RelativeDocumentMoniker": "Forms\\ucDashboard.cs",
-              "ToolTip": "E:\\Profects\\Studen-Management-System\\Forms\\ucDashboard.cs [Design]*",
-              "RelativeToolTip": "Forms\\ucDashboard.cs [Design]*",
+              "Title": "ucStudents.cs [Design]",
+              "DocumentMoniker": "E:\\Profects\\Studen-Management-System\\Forms\\ucStudents.cs",
+              "RelativeDocumentMoniker": "Forms\\ucStudents.cs",
+              "ToolTip": "E:\\Profects\\Studen-Management-System\\Forms\\ucStudents.cs [Design]",
+              "RelativeToolTip": "Forms\\ucStudents.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-03T21:23:27.633Z",
+              "WhenOpened": "2026-08-06T16:36:30.936Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ucDashboard.cs [Design]",
+              "DocumentMoniker": "E:\\Profects\\Studen-Management-System\\Forms\\ucDashboard.cs",
+              "RelativeDocumentMoniker": "Forms\\ucDashboard.cs",
+              "ToolTip": "E:\\Profects\\Studen-Management-System\\Forms\\ucDashboard.cs [Design]",
+              "RelativeToolTip": "Forms\\ucDashboard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-06T16:35:36.681Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\Profects\\Studen-Management-System\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "E:\\Profects\\Studen-Management-System\\Program.cs*",
-              "RelativeToolTip": "Program.cs*",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAowBYAAAAAAAAAAAAAAA==",
+              "ToolTip": "E:\\Profects\\Studen-Management-System\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAuwBYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-02T20:41:34.034Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-02T20:41:34.034Z"
             }
           ]
         }

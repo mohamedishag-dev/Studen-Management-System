@@ -236,6 +236,7 @@
             // 
             // ColPhone
             // 
+            this.ColPhone.FillWeight = 120F;
             this.ColPhone.HeaderText = "Phone";
             this.ColPhone.Name = "ColPhone";
             this.ColPhone.ReadOnly = true;
@@ -248,6 +249,7 @@
             // 
             // ColAddress
             // 
+            this.ColAddress.FillWeight = 80F;
             this.ColAddress.HeaderText = "Address";
             this.ColAddress.Name = "ColAddress";
             this.ColAddress.ReadOnly = true;

@@ -111,11 +111,15 @@
     <Compile Include="Services\IGenericService.cs" />
     <Compile Include="Services\StudentService.cs" />
     <Compile Include="Services\UserService.cs" />
+    <Compile Include="Helpers\UserGridHelper.cs" />
     <EmbeddedResource Include="Forms\frmEditStudent.resx">
       <DependentUpon>frmEditStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLogin.dje-NE.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -246,6 +250,17 @@
   <ItemGroup>
     <None Include="Resources\save_edit.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_fluent_shield_24_filled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_fluent_lock_closed_24_filled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_fluent_people_settings_24_filled.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
