@@ -27,7 +27,6 @@ E:\Profects\Studen-Management-System\obj\Debug\Student_Management_System.frmMess
 E:\Profects\Studen-Management-System\obj\Debug\Student_Management_System.Properties.Resources.resources
 E:\Profects\Studen-Management-System\obj\Debug\Student_Management_System.ucAddStudent.resources
 E:\Profects\Studen-Management-System\obj\Debug\Student_Management_System.ucDashboard.resources
-E:\Profects\Studen-Management-System\obj\Debug\Student_Management_System.ucEditStudent.resources
 E:\Profects\Studen-Management-System\obj\Debug\Student_Management_System.ucStudents.resources
 E:\Profects\Studen-Management-System\obj\Debug\Student_Management_System.ucUsers.resources
 E:\Profects\Studen-Management-System\obj\Debug\Student Management System.csproj.GenerateResource.cache

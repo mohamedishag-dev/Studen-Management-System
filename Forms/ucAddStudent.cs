@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Student_Management_System.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,31 +25,30 @@ namespace Student_Management_System
         {
 
             clsStudent Student = new clsStudent();
-         //   Student.ID = "STU0";
             Student.FirstName = txtFirstName.Text;
             Student.LastName = txtLastName.Text;
-            Student.Age = Convert.ToInt32(txtAge.Text);
+            Student.BirthDate = dtpBirthDate.Value;
             Student.Phone = txtPhone.Text;
             Student.Gender = cbGender.Text;
             Student.Address = txtAddress.Text;
-            
-            if (clsStudent.Add(Student))
+
+            StudentService service = new StudentService();
+
+            if (service.Add(Student)) 
             {
-                MessageBox.Show("Adding Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Adding Successfully", "Success",MessageBoxButtons.OK, 
+                    MessageBoxIcon.Information);
                 txtFirstName.Text = "";
                 txtLastName.Text = "";
-                txtAge.Text = "";
+                txtAddress.Text = "";
                 txtPhone.Text = "";
-                txtAddress.Text = ""; 
+
             }
             else
             {
                 MessageBox.Show("Fill in the voids", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
-
         }
-
-     
+    
     }
 }

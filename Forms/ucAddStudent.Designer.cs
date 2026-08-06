@@ -44,8 +44,8 @@
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
+            this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.txtAge = new System.Windows.Forms.TextBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -156,35 +156,37 @@
             // 
             panel4.BackColor = System.Drawing.Color.White;
             panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            panel4.Controls.Add(this.dtpBirthDate);
             panel4.Controls.Add(this.pictureBox4);
-            panel4.Controls.Add(this.txtAge);
             panel4.Location = new System.Drawing.Point(86, 315);
             panel4.Name = "panel4";
-            panel4.Size = new System.Drawing.Size(280, 46);
+            panel4.Size = new System.Drawing.Size(280, 38);
             panel4.TabIndex = 2;
+            // 
+            // dtpBirthDate
+            // 
+            this.dtpBirthDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.dtpBirthDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtpBirthDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.dtpBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBirthDate.Location = new System.Drawing.Point(30, -1);
+            this.dtpBirthDate.MaxDate = new System.DateTime(2099, 1, 1, 0, 0, 0, 0);
+            this.dtpBirthDate.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dtpBirthDate.Name = "dtpBirthDate";
+            this.dtpBirthDate.Size = new System.Drawing.Size(249, 38);
+            this.dtpBirthDate.TabIndex = 3;
+            this.dtpBirthDate.Value = new System.DateTime(2026, 1, 1, 0, 0, 0, 0);
             // 
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(0, 13);
+            this.pictureBox4.Location = new System.Drawing.Point(0, 10);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(20, 20);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 16;
             this.pictureBox4.TabStop = false;
-            // 
-            // txtAge
-            // 
-            this.txtAge.BackColor = System.Drawing.Color.White;
-            this.txtAge.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtAge.Location = new System.Drawing.Point(26, 13);
-            this.txtAge.MaxLength = 15;
-            this.txtAge.Name = "txtAge";
-            this.txtAge.Size = new System.Drawing.Size(231, 17);
-            this.txtAge.TabIndex = 0;
             // 
             // panel5
             // 
@@ -306,7 +308,7 @@
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(92, 18);
             label9.TabIndex = 26;
-            label9.Text = "Age";
+            label9.Text = "BirthDate";
             // 
             // panel1
             // 
@@ -429,7 +431,6 @@
             pnlLastName.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             panel4.ResumeLayout(false);
-            panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
@@ -451,7 +452,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.TextBox txtAge;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.PictureBox pictureBox6;
@@ -464,5 +464,6 @@
         private System.Windows.Forms.ComboBox cbGender;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.DateTimePicker dtpBirthDate;
     }
 }

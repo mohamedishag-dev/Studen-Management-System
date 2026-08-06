@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblActiveUsers = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,13 +41,13 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.dgvStudent = new System.Windows.Forms.DataGridView();
-            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFristName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColDateBirth = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColAdress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel2.SuspendLayout();
@@ -68,7 +64,7 @@
             this.panel1.Controls.Add(this.lblActiveUsers);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox5);
-            this.panel1.Location = new System.Drawing.Point(411, 28);
+            this.panel1.Location = new System.Drawing.Point(389, 28);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(266, 129);
             this.panel1.TabIndex = 11;
@@ -130,7 +126,7 @@
             this.panel2.Controls.Add(this.lblTotalStudents);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(64, 28);
+            this.panel2.Location = new System.Drawing.Point(96, 28);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(266, 129);
             this.panel2.TabIndex = 12;
@@ -149,7 +145,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(12, 6);
+            this.label2.Location = new System.Drawing.Point(3, 6);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(156, 25);
             this.label2.TabIndex = 9;
@@ -159,7 +155,7 @@
             // 
             this.btnViewAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnViewAll.ForeColor = System.Drawing.Color.Blue;
-            this.btnViewAll.Location = new System.Drawing.Point(489, 3);
+            this.btnViewAll.Location = new System.Drawing.Point(467, 3);
             this.btnViewAll.Name = "btnViewAll";
             this.btnViewAll.Size = new System.Drawing.Size(68, 36);
             this.btnViewAll.TabIndex = 0;
@@ -173,9 +169,9 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.btnViewAll);
-            this.panel3.Location = new System.Drawing.Point(64, 182);
+            this.panel3.Location = new System.Drawing.Point(96, 182);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(613, 44);
+            this.panel3.Size = new System.Drawing.Size(559, 44);
             this.panel3.TabIndex = 13;
             // 
             // panelContainer
@@ -194,100 +190,67 @@
             // dgvStudent
             // 
             this.dgvStudent.AllowUserToAddRows = false;
-            this.dgvStudent.AllowUserToResizeRows = false;
+            this.dgvStudent.AllowUserToDeleteRows = false;
+            this.dgvStudent.AllowUserToResizeColumns = false;
+            this.dgvStudent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvStudent.BackgroundColor = System.Drawing.Color.White;
             this.dgvStudent.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvStudent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvStudent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStudent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvStudent.ColumnHeadersHeight = 30;
+            this.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColID,
-            this.ColFristName,
+            this.ColId,
+            this.ColFirstName,
             this.ColLastName,
-            this.ColAge,
+            this.ColDateBirth,
             this.ColPhone,
             this.ColGender,
-            this.ColAdress});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStudent.DefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvStudent.EnableHeadersVisualStyles = false;
-            this.dgvStudent.Location = new System.Drawing.Point(64, 232);
+            this.ColAddress});
+            this.dgvStudent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgvStudent.Location = new System.Drawing.Point(96, 244);
             this.dgvStudent.Name = "dgvStudent";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStudent.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.dgvStudent.RowHeadersVisible = false;
-            this.dgvStudent.RowTemplate.Height = 30;
-            this.dgvStudent.Size = new System.Drawing.Size(613, 215);
-            this.dgvStudent.TabIndex = 15;
+            this.dgvStudent.Size = new System.Drawing.Size(559, 302);
+            this.dgvStudent.TabIndex = 35;
             // 
-            // ColID
+            // ColId
             // 
-            this.ColID.Frozen = true;
-            this.ColID.HeaderText = "ID";
-            this.ColID.Name = "ColID";
-            this.ColID.ReadOnly = true;
-            this.ColID.Width = 60;
+            this.ColId.HeaderText = "ID";
+            this.ColId.Name = "ColId";
+            this.ColId.ReadOnly = true;
             // 
-            // ColFristName
+            // ColFirstName
             // 
-            this.ColFristName.Frozen = true;
-            this.ColFristName.HeaderText = "FristName";
-            this.ColFristName.Name = "ColFristName";
+            this.ColFirstName.HeaderText = "FirstName";
+            this.ColFirstName.Name = "ColFirstName";
+            this.ColFirstName.ReadOnly = true;
             // 
             // ColLastName
             // 
-            this.ColLastName.Frozen = true;
             this.ColLastName.HeaderText = "LastName";
             this.ColLastName.Name = "ColLastName";
             this.ColLastName.ReadOnly = true;
             // 
-            // ColAge
+            // ColDateBirth
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.ColAge.DefaultCellStyle = dataGridViewCellStyle10;
-            this.ColAge.Frozen = true;
-            this.ColAge.HeaderText = "Age";
-            this.ColAge.Name = "ColAge";
-            this.ColAge.Width = 50;
+            this.ColDateBirth.HeaderText = "DateBirth";
+            this.ColDateBirth.Name = "ColDateBirth";
+            this.ColDateBirth.ReadOnly = true;
             // 
             // ColPhone
             // 
-            this.ColPhone.Frozen = true;
             this.ColPhone.HeaderText = "Phone";
             this.ColPhone.Name = "ColPhone";
-            this.ColPhone.Width = 120;
+            this.ColPhone.ReadOnly = true;
             // 
             // ColGender
             // 
-            this.ColGender.Frozen = true;
             this.ColGender.HeaderText = "Gender";
             this.ColGender.Name = "ColGender";
-            this.ColGender.Width = 80;
+            this.ColGender.ReadOnly = true;
             // 
-            // ColAdress
+            // ColAddress
             // 
-            this.ColAdress.Frozen = true;
-            this.ColAdress.HeaderText = "Adress";
-            this.ColAdress.Name = "ColAdress";
+            this.ColAddress.HeaderText = "Address";
+            this.ColAddress.Name = "ColAddress";
+            this.ColAddress.ReadOnly = true;
             // 
             // ucDashboard
             // 
@@ -296,7 +259,6 @@
             this.Controls.Add(this.panelContainer);
             this.Name = "ucDashboard";
             this.Size = new System.Drawing.Size(744, 561);
-            this.Load += new System.EventHandler(this.ucDashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -325,12 +287,12 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.DataGridView dgvStudent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColFristName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColFirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColLastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColAge;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColDateBirth;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColPhone;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColGender;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColAdress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColAddress;
     }
 }

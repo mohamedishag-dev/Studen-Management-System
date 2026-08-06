@@ -15,17 +15,11 @@ namespace Student_Management_System
         public frmLogin()
         {
             InitializeComponent();
-        }
-
-        private bool ShowPassword = false;
-
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-
             Image img = Properties.Resources.sign_in;
             btnLogin.Image = new Bitmap(img, new Size(24, 24));
         }
 
+        private bool ShowPassword = false;
         private void btnLogin_Click(object sender, EventArgs e)
         {
             try

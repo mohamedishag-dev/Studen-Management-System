@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Student_Management_System.Repositories;
+using Student_Management_System.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,9 +16,11 @@ namespace Student_Management_System
         [STAThread]
         static void Main()
         {
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmLogin());
+
         }
     }
 }
