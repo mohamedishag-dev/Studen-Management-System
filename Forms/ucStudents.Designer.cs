@@ -40,14 +40,14 @@
             this.lblTotalStudents = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ColAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColDateBirth = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvStudent = new System.Windows.Forms.DataGridView();
+            this.ColId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColDateBirth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlPassword.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pEyeIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -195,48 +195,6 @@
             this.panel1.Size = new System.Drawing.Size(565, 308);
             this.panel1.TabIndex = 33;
             // 
-            // ColAddress
-            // 
-            this.ColAddress.HeaderText = "Address";
-            this.ColAddress.Name = "ColAddress";
-            this.ColAddress.ReadOnly = true;
-            // 
-            // ColGender
-            // 
-            this.ColGender.HeaderText = "Gender";
-            this.ColGender.Name = "ColGender";
-            this.ColGender.ReadOnly = true;
-            // 
-            // ColPhone
-            // 
-            this.ColPhone.HeaderText = "Phone";
-            this.ColPhone.Name = "ColPhone";
-            this.ColPhone.ReadOnly = true;
-            // 
-            // ColDateBirth
-            // 
-            this.ColDateBirth.HeaderText = "DateBirth";
-            this.ColDateBirth.Name = "ColDateBirth";
-            this.ColDateBirth.ReadOnly = true;
-            // 
-            // ColLastName
-            // 
-            this.ColLastName.HeaderText = "LastName";
-            this.ColLastName.Name = "ColLastName";
-            this.ColLastName.ReadOnly = true;
-            // 
-            // ColFirstName
-            // 
-            this.ColFirstName.HeaderText = "FirstName";
-            this.ColFirstName.Name = "ColFirstName";
-            this.ColFirstName.ReadOnly = true;
-            // 
-            // ColId
-            // 
-            this.ColId.HeaderText = "ID";
-            this.ColId.Name = "ColId";
-            this.ColId.ReadOnly = true;
-            // 
             // dgvStudent
             // 
             this.dgvStudent.AllowUserToAddRows = false;
@@ -259,6 +217,50 @@
             this.dgvStudent.Name = "dgvStudent";
             this.dgvStudent.Size = new System.Drawing.Size(559, 302);
             this.dgvStudent.TabIndex = 34;
+            // 
+            // ColId
+            // 
+            this.ColId.HeaderText = "ID";
+            this.ColId.Name = "ColId";
+            this.ColId.ReadOnly = true;
+            // 
+            // ColFirstName
+            // 
+            this.ColFirstName.HeaderText = "FirstName";
+            this.ColFirstName.Name = "ColFirstName";
+            this.ColFirstName.ReadOnly = true;
+            // 
+            // ColLastName
+            // 
+            this.ColLastName.HeaderText = "LastName";
+            this.ColLastName.Name = "ColLastName";
+            this.ColLastName.ReadOnly = true;
+            // 
+            // ColDateBirth
+            // 
+            this.ColDateBirth.HeaderText = "DateBirth";
+            this.ColDateBirth.Name = "ColDateBirth";
+            this.ColDateBirth.ReadOnly = true;
+            // 
+            // ColPhone
+            // 
+            this.ColPhone.FillWeight = 120F;
+            this.ColPhone.HeaderText = "Phone";
+            this.ColPhone.Name = "ColPhone";
+            this.ColPhone.ReadOnly = true;
+            // 
+            // ColGender
+            // 
+            this.ColGender.HeaderText = "Gender";
+            this.ColGender.Name = "ColGender";
+            this.ColGender.ReadOnly = true;
+            // 
+            // ColAddress
+            // 
+            this.ColAddress.FillWeight = 80F;
+            this.ColAddress.HeaderText = "Address";
+            this.ColAddress.Name = "ColAddress";
+            this.ColAddress.ReadOnly = true;
             // 
             // ucStudents
             // 
