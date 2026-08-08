@@ -17,8 +17,12 @@ namespace Student_Management_System
         {
             InitializeComponent();
 
-            StudentService studentService = new StudentService();
+            Image imgEidt = Properties.Resources.save_edit;
+            btnUpdata.Image = new Bitmap(imgEidt, new Size(24, 24));
+            Image imgCancel = Properties.Resources.close;
+            btnCancel.Image = new Bitmap(imgCancel, new Size(24, 24));
 
+            StudentService studentService = new StudentService();
             StudentEdit = studentService.Find(StudentID);
 
         }
@@ -31,15 +35,11 @@ namespace Student_Management_System
 
         private void frmEditStudent_Load(object sender, EventArgs e)
         {
-            Image imgEidt = Properties.Resources.save_edit;
-            btnUpdata.Image = new Bitmap(imgEidt, new Size(24, 24));
-            Image imgCancel = Properties.Resources.close;
-            btnCancel.Image = new Bitmap(imgCancel, new Size(24, 24));
-
+            
             lblIDStudent.Text = StudentEdit.ID;
             txtFirstName.Text = StudentEdit.FirstName;
             txtLastName.Text = StudentEdit.LastName;
-            txtAge.Text = StudentEdit.BirthDate.ToString();
+            dtpBirthDate.Value = StudentEdit.BirthDate;
             txtPhone.Text = StudentEdit.Phone;
             cbGender.Text = StudentEdit.Gender;
             txtAddress.Text = StudentEdit.Address;
@@ -51,7 +51,7 @@ namespace Student_Management_System
 
             StudentEdit.FirstName = txtFirstName.Text;
             StudentEdit.LastName = txtLastName.Text;
-            StudentEdit.BirthDate = Convert.ToDateTime(txtAge.Text);
+            StudentEdit.BirthDate = Convert.ToDateTime(dtpBirthDate.Value);
             StudentEdit.Phone = txtPhone.Text;
             StudentEdit.Gender = cbGender.Text;
             StudentEdit.Address = txtAddress.Text;

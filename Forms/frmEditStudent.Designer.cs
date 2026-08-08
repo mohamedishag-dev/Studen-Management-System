@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Label label9;
             System.Windows.Forms.Label label5;
             System.Windows.Forms.Label label8;
-            System.Windows.Forms.Panel panel4;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditStudent));
             System.Windows.Forms.Panel pnlFirstName;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditStudent));
             System.Windows.Forms.Panel panel5;
             System.Windows.Forms.Label label7;
             System.Windows.Forms.Label label6;
@@ -41,8 +39,8 @@
             System.Windows.Forms.Panel panel6;
             System.Windows.Forms.Panel pnlLastName;
             System.Windows.Forms.Label label4;
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.txtAge = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.Label label9;
+            System.Windows.Forms.Panel panel4;
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -60,10 +58,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            label9 = new System.Windows.Forms.Label();
+            this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             label5 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
-            panel4 = new System.Windows.Forms.Panel();
             pnlFirstName = new System.Windows.Forms.Panel();
             panel5 = new System.Windows.Forms.Panel();
             label7 = new System.Windows.Forms.Label();
@@ -72,8 +70,8 @@
             panel6 = new System.Windows.Forms.Panel();
             pnlLastName = new System.Windows.Forms.Panel();
             label4 = new System.Windows.Forms.Label();
-            panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            label9 = new System.Windows.Forms.Label();
+            panel4 = new System.Windows.Forms.Panel();
             pnlFirstName.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             panel5.SuspendLayout();
@@ -85,16 +83,9 @@
             this.pnlPassword.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label9
-            // 
-            label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label9.Location = new System.Drawing.Point(39, 352);
-            label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(92, 18);
-            label9.TabIndex = 72;
-            label9.Text = "Age";
             // 
             // label5
             // 
@@ -113,40 +104,6 @@
             label8.Size = new System.Drawing.Size(92, 14);
             label8.TabIndex = 70;
             label8.Text = "Address";
-            // 
-            // panel4
-            // 
-            panel4.BackColor = System.Drawing.Color.White;
-            panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            panel4.Controls.Add(this.pictureBox4);
-            panel4.Controls.Add(this.txtAge);
-            panel4.Location = new System.Drawing.Point(39, 373);
-            panel4.Name = "panel4";
-            panel4.Size = new System.Drawing.Size(280, 46);
-            panel4.TabIndex = 60;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(0, 13);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 16;
-            this.pictureBox4.TabStop = false;
-            // 
-            // txtAge
-            // 
-            this.txtAge.BackColor = System.Drawing.Color.White;
-            this.txtAge.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtAge.Location = new System.Drawing.Point(26, 13);
-            this.txtAge.MaxLength = 15;
-            this.txtAge.Name = "txtAge";
-            this.txtAge.Size = new System.Drawing.Size(231, 17);
-            this.txtAge.TabIndex = 0;
             // 
             // pnlFirstName
             // 
@@ -311,6 +268,15 @@
             this.txtLastName.Size = new System.Drawing.Size(231, 17);
             this.txtLastName.TabIndex = 0;
             // 
+            // label4
+            // 
+            label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label4.Location = new System.Drawing.Point(39, 119);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(150, 14);
+            label4.TabIndex = 74;
+            label4.Text = "ID Student";
+            // 
             // lblIDStudent
             // 
             this.lblIDStudent.AutoSize = true;
@@ -415,29 +381,65 @@
             this.pictureBox2.TabIndex = 14;
             this.pictureBox2.TabStop = false;
             // 
-            // label4
+            // label9
             // 
-            label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label4.Location = new System.Drawing.Point(39, 119);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(150, 14);
-            label4.TabIndex = 74;
-            label4.Text = "ID Student";
+            label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label9.Location = new System.Drawing.Point(35, 352);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(92, 18);
+            label9.TabIndex = 76;
+            label9.Text = "BirthDate";
+            // 
+            // panel4
+            // 
+            panel4.BackColor = System.Drawing.Color.White;
+            panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            panel4.Controls.Add(this.dtpBirthDate);
+            panel4.Controls.Add(this.pictureBox4);
+            panel4.Location = new System.Drawing.Point(37, 373);
+            panel4.Name = "panel4";
+            panel4.Size = new System.Drawing.Size(280, 38);
+            panel4.TabIndex = 75;
+            // 
+            // dtpBirthDate
+            // 
+            this.dtpBirthDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.dtpBirthDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtpBirthDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.dtpBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBirthDate.Location = new System.Drawing.Point(30, -1);
+            this.dtpBirthDate.MaxDate = new System.DateTime(2099, 1, 1, 0, 0, 0, 0);
+            this.dtpBirthDate.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dtpBirthDate.Name = "dtpBirthDate";
+            this.dtpBirthDate.Size = new System.Drawing.Size(249, 38);
+            this.dtpBirthDate.TabIndex = 3;
+            this.dtpBirthDate.Value = new System.DateTime(2026, 1, 1, 0, 0, 0, 0);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(0, 10);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 16;
+            this.pictureBox4.TabStop = false;
             // 
             // frmEditStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 527);
-            this.Controls.Add(label4);
             this.Controls.Add(label9);
+            this.Controls.Add(panel4);
+            this.Controls.Add(label4);
             this.Controls.Add(label5);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnUpdata);
             this.Controls.Add(this.cbGender);
             this.Controls.Add(this.pnlPassword);
             this.Controls.Add(label8);
-            this.Controls.Add(panel4);
             this.Controls.Add(pnlFirstName);
             this.Controls.Add(panel5);
             this.Controls.Add(label7);
@@ -450,9 +452,6 @@
             this.Name = "frmEditStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmEditStudent_Load);
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             pnlFirstName.ResumeLayout(false);
             pnlFirstName.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -470,6 +469,8 @@
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -484,9 +485,7 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.TextBox txtAddress;
-        private System.Windows.Forms.TextBox txtAge;
         private System.Windows.Forms.Panel pnlPassword;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtLastName;
@@ -495,5 +494,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.DateTimePicker dtpBirthDate;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }
